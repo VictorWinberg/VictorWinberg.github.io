@@ -24,13 +24,33 @@
   }
 
   section {
-    background: #ddd;
+    background: rgba(165, 165, 165, 0.6);
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 350px;
     float: left;
     padding: 10px;
+    margin: 17px;
+  }
+
+  nav {
+    margin: 5px;
+    width: 150px;
+    float: left;
+  }
+
+  figure {
+    position: absolute;
+    padding: 10px;
+    border: #999 1px dashed;
+    max-width: 500px;
+    float: right;
     margin: 15px;
+    right: 0px;
+  }
+
+  figure img {
+    max-width: 500px;
   }
 
   footer {
@@ -42,7 +62,15 @@
     display: none;
   }
 
+  .figure-switcher {
+    display: none;
+  }
+
   .content-switcher:first-child {
+    display: block;
+  }
+
+  .figure-switcher:first-child {
     display: block;
   }
 
@@ -53,12 +81,6 @@
     padding: 10px;
     border: #999 1px dashed;
     border-radius: 6px;
-  }
-
-  nav ul {
-    max-height: 600px;
-    width: 150px;
-    float: left;
   }
 
   .content-switcher ul {
@@ -98,6 +120,21 @@
     <h3 class="animated fadeInDown"> Master of Science in Computer Science </h3>
   </header>
 
+  <figure class="animated fadeInRight">
+    <div class="figure-switcher" id="i1">
+      <img src="LHS/web/Deaths.png" />
+    </div>
+    <div class="figure-switcher" id="i2">
+      <img src="LHS/img/dat14vwi.jpg" />
+    </div>
+    <div class="figure-switcher" id="i3">
+    </div>
+    <div class="figure-switcher" id="i4">
+    </div>
+    <div class="figure-switcher" id="i5">
+    </div>
+  </figure>
+
   <nav class="animated fadeInLeft">
     <ul>
       <a navid="1">Home</a>
@@ -129,7 +166,7 @@
       <h4>My Projects</h4>
       <br>
       <ul>
-        <a href="LHS" target="_blank">Last Hen Standing aka Killergames</a>
+        <a href="LHS/index.html" target="_blank">Last Hen Standing aka Killergames</a>
         <a href="http://ereuntzdag.se/" target="_blank">Ereuntzdag.se</a>
       </ul>
     </div>
@@ -156,7 +193,9 @@
         var id = $(this).attr('navid');
         var panel = $('#p' + id);
         $('.content-switcher').fadeOut(1000);
-        $('#p' + id).delay(1000).fadeIn(1000);
+        $('.figure-switcher').fadeOut(1000);
+        $('section #p' + id).delay(1000).fadeIn(1000);
+        $('figure #i' + id).delay(1000).fadeIn(1000);
         $(this).addClass(animClick).one(animationend, function() {
           $(this).removeClass(animClick);
         });
