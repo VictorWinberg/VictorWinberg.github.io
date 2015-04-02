@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Last Hen Standing</title>
+
+  <style type="text/css">
+    body {
+      background-image: url("web/BG.png");
+      background-size: 100%;
+      text-align: center;
+    }
+
+    .slider {
+      width: 800px;
+      height: 500px;
+      overflow: hidden;
+      margin: 30px auto;
+      background-repeat: no-repeat;
+    }
+
+    .slider img {
+      max-width: 800px;
+      max-height: 500px;
+      display: none;
+    }
+
+    #deathtag {
+      text-align: center;
+      position: absolute;
+      font-family: sans-serif;
+      font-size: 500px;
+      color: red;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 50%;
+      margin: 0px auto;
+      display: none;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+    function Slider() {
+    	var dead = document.getElementById('img');
+
+    	var imgArray = new Array('dat14ago', 'dat12ska', 'dat14vwi',
+    		'dat14pla', 'dat14aon', 'dat14lse', 'dat12cso', 'dat14hli');
+    	var imgIndex = 0;
+
+    	$(".slider #welcome").show("fade", 2000).delay(1000).hide("fade", 2000);
+    	setTimeout(function() {
+    		document.getElementById("today").src = "web/Today.png";
+    	}, 6000);
+    	setInterval(
+    		function() {
+    			var imgPath = 'img/' + imgArray[imgIndex] + '.jpg';
+    			dead.src = imgPath;
+    			dead.alt = imgArray[imgIndex];
+    			$(".slider #img").show("fade", 1000);
+    			document.getElementById("img").style.webkitFilter = 'none';
+    			document.getElementById("img").style.filter = 'none';
+    			setTimeout(
+    				function() {
+    					document.getElementById("img").style.webkitFilter = 'grayscale(1)';
+    					document.getElementById("img").style.filter = 'grayscale(1)';
+    					$("#deathtag").show("fade", 1).hide("fade",
+    						2000);
+    					$(".slider #img").delay(2000)
+    						.hide("fade", 4000);
+    					document.getElementById("shot").play();
+    				}, 1000);
+    			if (imgIndex == imgArray.length - 1)
+    				imgIndex = 0;
+    			else
+    				imgIndex = imgIndex + 1;
+    		}, 7000);
+    }
+  </script>
+
+</head>
+
+<body onload="Slider();">
+
+  <div class="slider">
+    <!-- Start the Slider -->
+    <img id="welcome" src="web/Welcome.png" border="0" alt="Welcome" />
+    <img id="deaths" src="web/Deaths.png" border="0" alt="Deaths" />
+    <img id="img" border="0" alt="Dead" />
+  </div>
+  <div id="deathtag">X</div>
+  <div class="today">
+    <img id="today" />
+  </div>
+  <audio id="shot" src="web/shot.mp3"></audio>
+</body>
+
+</html>
