@@ -34,22 +34,39 @@
   }
 
   footer {
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
   }
 
-  nav ul {
+  .content-switcher {
+    display: none;
+  }
+
+  .content-switcher:first-child {
+    display: block;
+  }
+
+  nav ul,
+  .content-switcher ul {
     line-height: 30px;
     background-color: #eeeeee;
-    max-height: 600px;
-    width: 150px;
-    float: left;
     padding: 10px;
     border: #999 1px dashed;
     border-radius: 6px;
   }
 
-  nav ul a {
+  nav ul {
+    max-height: 600px;
+    width: 150px;
+    float: left;
+  }
+
+  .content-switcher ul {
+    background-color: white;
+  }
+
+  nav ul a,
+  .content-switcher ul a {
     display: block;
     color: #999;
     background: #333;
@@ -60,16 +77,18 @@
     transition: background 0.3s linear 0s, color 0.3s linear 0s;
   }
 
+  .content-switcher ul a {
+    background: #262626;
+  }
+
   nav ul a:hover {
     background: #6F8A00;
     color: #FFF;
   }
 
-  .content-switcher {
-    display: none;
-  }
-  .content-switcher:first-child {
-    display: block;
+  .content-switcher ul a:hover {
+    background: #068a00;
+    color: #FFF;
   }
 </style>
 
@@ -90,34 +109,37 @@
   </nav>
 
   <section class="animated fadeInDown">
-    <p class="content-switcher" id="p1">
-      <b>Home</b><br>
-      Hi and welcome to my webpage! Feel free to look around.
-    </p>
-    <p class="content-switcher" id="p2">
-      <b>About me</b><br>
-      I am a happy student who loves to learn and teach Computer Engineering.
-      I am inter alia functionary in various committees.
-      In the future I hope to work for a company I really enjoy.
-    </p>
-    <p class="content-switcher" id="p3">
-      <b>Services</b><br>
-      I have work experience as an IT technician, shop salesman and cashier.
-      Parallel to my studies, I am inter alia functionary in various committees.
-      In the future I hope to work for a company I really enjoy.
-    </p>
-    <p class="content-switcher" id="p4">
-      <b>My Projects</b><br>
-      <a href="LHS"> Last hen Standing - aka Killergames</a> <br>
-      <a href="http://ereuntzdag.se/">Ereuntzdag.se</a>
-    </p>
-    <p class="content-switcher" id="p5">
-      <b>Contact</b><br>
-      +46 (0) 705 17 23 30<br>
-      Salviavägen 7<br>
-      Bjärred 237 37<br>
-      Sweden
-    </p>
+    <div class="content-switcher" id="p1">
+      <h4>Home</h4>
+      <br>
+      <p> Hi and welcome to my webpage! Feel free to look around.</p>
+    </div>
+    <div class="content-switcher" id="p2">
+      <h4>About me</h4>
+      <br>
+      <p>
+        I am a happy student who loves to learn and teach Computer Engineering. I am inter alia functionary in various committees. In the future I hope to work for a company I really enjoy.
+      </p>
+    </div>
+    <div class="content-switcher" id="p3">
+      <h4>Services</h4>
+      <br> I have work experience as an IT technician, shop salesman and cashier. Parallel to my studies, I am inter alia functionary in various committees. In the future I hope to work for a company I really enjoy.
+    </div>
+    <div class="content-switcher" id="p4">
+      <h4>My Projects</h4>
+      <br>
+      <ul>
+        <a href="LHS" target="_blank">Last Hen Standing aka Killergames</a>
+        <a href="http://ereuntzdag.se/" target="_blank">Ereuntzdag.se</a>
+      </ul>
+    </div>
+    <div class="content-switcher" id="p5">
+      <h4>Contact</h4>
+      <br> +46 (0) 705 17 23 30
+      <br> Salviavägen 7
+      <br> Bjärred 237 37
+      <br> Sweden
+    </div>
   </section>
 
   <footer class="animated fadeInUp">
@@ -125,27 +147,27 @@
   </footer>
 
   <script>
-  $(function() {
-    var animClick = 'animated bounce';
-    var animSecIn = 'animated fadeInDown';
-    var animSecOut = 'animated fadeOutDown';
-    var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd animationend'
-    $('nav ul a').on('click', function() {
-      var id = $(this).attr('navid');
-      var panel = $('#p'+id);
-      $('.content-switcher').fadeOut(1000);
-      $('#p'+id).delay(1000).fadeIn(1000);
-      $(this).addClass(animClick).one(animationend, function() {
-        $(this).removeClass(animClick);
+    $(function() {
+      var animClick = 'animated bounce';
+      var animSecIn = 'animated fadeInDown';
+      var animSecOut = 'animated fadeOutDown';
+      var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd animationend'
+      $('nav ul a').on('click', function() {
+        var id = $(this).attr('navid');
+        var panel = $('#p' + id);
+        $('.content-switcher').fadeOut(1000);
+        $('#p' + id).delay(1000).fadeIn(1000);
+        $(this).addClass(animClick).one(animationend, function() {
+          $(this).removeClass(animClick);
+        });
+      });
+      var animTitle = 'animated hinge';
+      $('header').on('click', function() {
+        $('header').addClass(animTitle).one(animationend, function() {
+          $('header').removeClass(animTitle);
+        });
       });
     });
-    var animTitle = 'animated hinge';
-    $('header').on('click', function() {
-      $('header').addClass(animTitle).one(animationend, function() {
-        $('header').removeClass(animTitle);
-      });
-    });
-  });
   </script>
 </body>
 
