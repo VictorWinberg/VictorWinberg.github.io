@@ -1,24 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<title>Victor Winberg</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="animate.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Last Hen Standing</title>
+<style>
+  body {
+    font-family: Verdana, sans-serif;
+    font-size: 0.8em;
+  }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  header,
+  footer {
+    text-align: center;
+    border: 1px solid grey;
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
+    color: white;
+    background-color: #444;
+  }
 
-  <script type="text/javascript">
+  section {
+    background: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 350px;
+    float: left;
+    padding: 10px;
+    margin: 15px;
+  }
 
-  </script>
+  footer {
+    position:absolute;
+    bottom:0;
+  }
 
-</head>
+  nav ul {
+    line-height: 30px;
+    background-color: #eeeeee;
+    max-height: 600px;
+    width: 150px;
+    float: left;
+    padding: 10px;
+    border: #999 1px dashed;
+    border-radius: 6px;
+  }
+
+  nav ul a {
+    display: block;
+    color: #999;
+    background: #333;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 5px;
+    transition: background 0.3s linear 0s, color 0.3s linear 0s;
+  }
+
+  nav ul a:hover {
+    background: #6F8A00;
+    color: #FFF;
+  }
+
+  .content-switcher {
+    display: none;
+  }
+  .content-switcher:first-child {
+    display: block;
+  }
+</style>
 
 <body>
-  <a href="LHS/index.html">Click Here for LHS</a> 
-  <div class="info">
-    Text
-  </div>
+  <header>
+    <h1 class="animated fadeIn"> Victor Winberg </h1>
+    <h3 class="animated fadeInDown"> Master of Science in Computer Science </h3>
+  </header>
+
+  <nav class="animated fadeInLeft">
+    <ul>
+      <a navid="1">Home</a>
+      <a navid="2">About me</a>
+      <a navid="3">Services</a>
+      <a navid="4">My Projects</a>
+      <a navid="5">Contact</a>
+    </ul>
+  </nav>
+
+  <section class="animated fadeInDown">
+    <p class="content-switcher" id="p1">
+      <b>Home</b><br>
+      Hi and welcome to my webpage! Feel free to look around.
+    </p>
+    <p class="content-switcher" id="p2">
+      <b>About me</b><br>
+      I am a happy student who loves to learn and teach Computer Engineering.
+      I am inter alia functionary in various committees.
+      In the future I hope to work for a company I really enjoy.
+    </p>
+    <p class="content-switcher" id="p3">
+      <b>Services</b><br>
+      I have work experience as an IT technician, shop salesman and cashier.
+      Parallel to my studies, I am inter alia functionary in various committees.
+      In the future I hope to work for a company I really enjoy.
+    </p>
+    <p class="content-switcher" id="p4">
+      <b>My Projects</b><br>
+      <a href="LHS"> Last hen Standing - aka Killergames</a> <br>
+      <a href="http://ereuntzdag.se/">Ereuntzdag.se</a>
+    </p>
+    <p class="content-switcher" id="p5">
+      <b>Contact</b><br>
+      +46 (0) 705 17 23 30<br>
+      Salviavägen 7<br>
+      Bjärred 237 37<br>
+      Sweden
+    </p>
+  </section>
+
+  <footer class="animated fadeInUp">
+    <p>Copyright &copy; Victor Winberg. All rights reserved.</p>
+  </footer>
+
+  <script>
+  $(function() {
+    var animClick = 'animated bounce';
+    var animSecIn = 'animated fadeInDown';
+    var animSecOut = 'animated fadeOutDown';
+    var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd animationend'
+    $('nav ul a').on('click', function() {
+      var id = $(this).attr('navid');
+      var panel = $('#p'+id);
+      $('.content-switcher').fadeOut(1000);
+      $('#p'+id).delay(1000).fadeIn(1000);
+      $(this).addClass(animClick).one(animationend, function() {
+        $(this).removeClass(animClick);
+      });
+    });
+    var animTitle = 'animated hinge';
+    $('header').on('click', function() {
+      $('header').addClass(animTitle).one(animationend, function() {
+        $('header').removeClass(animTitle);
+      });
+    });
+  });
+  </script>
 </body>
 
 </html>
