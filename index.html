@@ -8,7 +8,7 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+  <link rel="icon" href="img/v_64x64.png">
 
   <title>Victor Winberg</title>
 
@@ -31,14 +31,23 @@
       max-width: 200px;
     }
 
-    @media (min-width: 768px) {
-
+    .nav-pills li, .nav-pills li a {
+      color: #fff;
+      background-color: #337ab7;
     }
 
-    @media (min-width: 992px) {
+    .nav-pills li a:hover{
+      color: #000000;
+    }
+
+    @media (min-width: 768px) {
       .img-container {
         max-width: 300px;
       }
+    }
+
+    @media (min-width: 992px) {
+
     }
   </style>
 </head>
@@ -47,23 +56,26 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
+        <nav class="nav nav-pills navbar-right">
+          <li><a href="CV.pdf" target="_blank">Download CV</a></li>
+        </nav>
         <div class="center-block img-container animated fadeInDown">
           <img src="https://scontent-arn2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1800269_769377206442476_2582664354502913154_n.jpg?oh=14b7c67d742efedad6a3ca075fa8dd1b&oe=56286A86" class="img-circle img-responsive">
         </div>
 
         <div class="text-center">
-          <h1 class="animated bounceIn">Victor Winberg <br>
+          <h1 class="animated bounceIn"><img src="img/v_48x48.png" align="bottom"></img>ictor Winberg <br>
             <small class="lead">Studying Master of Science in
-              <a href="http://www.lth.se/english/education/programmes/master-engineering/computer-science-engineering/">
-                Computer Science and Engineering</a> at <a href="http://www.lunduniversity.lu.se/">Lund University</a>.</small>
+              <a href="http://www.lth.se/english/education/programmes/master-engineering/computer-science-engineering/" target="_blank">
+                Computer Science and Engineering</a> at <a href="http://www.lunduniversity.lu.se/" target="_blank">Lund University</a>.</small>
           </h1>
 
           <ul class="list-inline animated fadeInUp">
-            <li><a href="https://github.com/VictorWinberg/" class="fa fa-github fa-2x"></a></li>
-            <li><a href="https://www.facebook.com/ViictooorW" class="fa fa-facebook fa-2x"></a></li>
-            <li><a href="https://www.youtube.com/user/VictorW95" class="fa fa-youtube fa-2x"></a></li>
-            <li><a href="https://se.linkedin.com/in/victorwinberg" class="fa fa-linkedin fa-2x"></a></li>
-            <li><a href="mailto:dat14vwi@student.lu.se" class="fa fa-envelope-o fa-2x"></a></li>
+            <li><a href="https://github.com/VictorWinberg/" class="fa fa-github fa-2x" target="_blank"></a></li>
+            <li><a href="https://www.facebook.com/ViictooorW" class="fa fa-facebook fa-2x" target="_blank"></a></li>
+            <li><a href="https://www.youtube.com/user/VictorW95" class="fa fa-youtube fa-2x" target="_blank"></a></li>
+            <li><a href="https://se.linkedin.com/in/victorwinberg" class="fa fa-linkedin fa-2x" target="_blank"></a></li>
+            <li><a href="mailto:dat14vwi@student.lu.se" class="fa fa-envelope-o fa-2x" target="_blank"></a></li>
           </ul>
         </div>
       </div>

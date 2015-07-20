@@ -12,6 +12,10 @@ body {
   text-align: center;
 }
 
+img {
+  vertical-align: text-bottom;
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -46,7 +50,7 @@ body {
   }
   /* Handle the widths */
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 80%; /* Must be percentage or pixels for horizontal alignment */
   }
 
   .info {
