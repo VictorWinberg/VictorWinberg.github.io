@@ -13,7 +13,7 @@
   <title>Victor Winberg</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Animate.css -->
   <link href="css/animate.min.css" rel="stylesheet">
@@ -21,11 +21,19 @@
   <!-- Custom styles -->
   <link href="css/cover.css" rel="stylesheet">
   <link href="css/bootstrap-social.min.css" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 
   <script src="js/ie-emulation-modes-warning.js"></script>
 
   <style type="text/css">
+    h1 {
+      font-weight: 100;
+    }
+
+    h1 b {
+      font-weight: 400;
+    }
+
     .img-container {
       max-width: 200px;
     }
@@ -41,6 +49,15 @@
 
     .nav-pills li a:hover{
       color: #000000;
+    }
+
+    canvas {
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     @media (min-width: 768px) {
@@ -67,33 +84,11 @@
         </nav>
 
         <div class="center-block img-container animated fadeInDown">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="img/dat14vwi.jpg" class="img-circle img-responsive">
-              </div>
-              <div class="item">
-                <div class="github-card" data-github="VictorWinberg" data-width="100%" data-height="100%" data-theme="medium"></div>
-                <div class="github-card" data-github="VictorWinberg" data-width="100%" data-height="100%" data-theme="default"></div>
-              </div>
-              <div class="item">
-                <div class="github-card" data-github="VictorWinberg/budcom.se" data-width="100%" data-height="100%" data-theme="default"></div>
-                <div class="github-card" data-github="VictorWinberg/LHS" data-width="100%" data-height="100%" data-theme="default"></div>
-              </div>
-            </div>
-          </div>
+          <img src="img/dat14vwi.jpg" class="img-circle img-responsive">
         </div>
 
         <div class="text-center">
-          <h1 class="animated bounceIn"><img src="img/v_48x48.png" align="bottom" alt="V"></img>ictor Winberg <br>
+          <h1 class="animated bounceIn">victor<b>winberg</b><br>
             <small class="lead">Studying Master of Science in
               <a href="http://www.lth.se/english/education/programmes/master-engineering/computer-science-engineering/" target="_blank">
                 Computer Science and Engineering</a> at <a href="http://www.lunduniversity.lu.se/" target="_blank">Lund University</a>.</small>
@@ -112,7 +107,7 @@
   </div>
 
   <canvas id="c" style="display:block"></canvas>
-  
+
   <script src="js/matrix.js"></script>
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -121,8 +116,19 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
-  <!-- Github Card widget -->
-  <script src="js/widget.js"></script>
+  <script>
+  $(document).ready(function(){
+    var matrix = true;
+    $(window).keypress(function(e) {
+      if (e.keyCode === 0 || e.keyCode === 32) {
+        if(matrix)
+          $("body").css("background-color","transparent");
+        else
+          $("body").css("background-color","#333");
+        matrix = !matrix;
+      }
+    });
+  });
+  </script>
 </body>
-
 </html>
