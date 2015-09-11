@@ -1,42 +1,10 @@
 /* Global vaiables */
-//letters characters - taken from the unicode charset
-var letters = ".";
-//converting the string into an array of single characters
-letters = letters.split("");
-
-//drawing the characters
-function drawProject() {
-  clear();
-
-	ctx.fillStyle = "#0F0"; //green text
-	ctx.font = font_size + "px arial";
-	//looping over drops
-	for(var i = 0; i < drops.length; i++) {
-		//a random letters character to print
-		var text = letters[Math.floor(Math.random()*letters.length)];
-		//x = i*font_size, y = value of drops[i]*font_size
-		ctx.fillText(text, i*font_size, drops[i]*font_size);
-
-		//sending the drop back to the top randomly after it has crossed the screen
-		//adding a randomness to the reset to make the drops scattered on the Y axis
-		if(drops[i]*font_size > c.height && Math.random() > 0.975)
-			drops[i] = 0;
-
-		//incrementing Y coordinate
-		drops[i]++;
-	}
-}
-
-setInterval(drawProject, 33);
-
-$(window).click(function(e) {
-  fireworks(e.pageX, e.pageY);
-});
-
-function fireworks(midx, midy) {
+function fireworks(midx, midy, size) {
     var start = null;
-    var duration = 1000;
+    var duration = 2000;
     var r = 0;
+
+    var colors = [getRandomColor(), getRandomColor()];
 
     function drawFrame(timestamp) {
         if (start == null) {
@@ -47,18 +15,19 @@ function fireworks(midx, midy) {
         ctx.beginPath();
         ctx.moveTo(midx, midy);
 
-        r = Math.random() * 100;
-        ctx.lineWidth = 1;
+        r = Math.random() * size;
+        ctx.lineWidth = size / 50;
         ctx.lineTo(midx + r * Math.cos(angle),
                       midy + r * Math.sin(angle));
-        ctx.strokeStyle=getRandomColor();
+        ctx.strokeStyle=colors[Math.floor(Math.random()*2)];
         ctx.stroke();
         if (progress < duration) {
             window.requestAnimationFrame(drawFrame);
         }
     }
-
     window.requestAnimationFrame(drawFrame);
+    if(Math.random()*100 > 99)
+      fireworks(midx, midy, size * 4);
 }
 
 function getRandomColor() {
@@ -69,3 +38,29 @@ function getRandomColor() {
     }
     return color;
 }
+
+var matrixInterval = null;
+var matrix = false;
+
+$(window).keypress(function(e) {
+  if (e.keyCode === 32) {
+		matrix = !matrix;
+		if(matrix)
+			matrixInterval = setInterval(drawMatrix, 33);
+		else
+			clearInterval(matrixInterval);
+    $("#c").toggle();
+  } else if (e.keyCode === 13) {
+
+  }
+});
+
+$(window).click(function(e) {
+  if(matrix)
+    fireworks(e.pageX, e.pageY, 100);
+});
+
+$(window).mousemove(function(e) {
+  if(matrix)
+    fireworks(e.pageX, e.pageY, 15);
+});

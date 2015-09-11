@@ -7,7 +7,7 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //letters characters - taken from the unicode charset
-var m_letters = "VICTORWINBERG";
+var m_letters = ".";
 //converting the string into an array of single characters
 m_letters = m_letters.split("");
 
@@ -42,7 +42,6 @@ function drawMatrix() {
 		drops[i]++;
 	}
 }
-setInterval(drawMatrix, 33);
 
 function clear() {
 	//Black BG for the canvas
@@ -50,9 +49,3 @@ function clear() {
 	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
 	ctx.fillRect(0, 0, c.width, c.height);
 }
-
-$(window).keypress(function(e) {
-  if (e.keyCode === 0 || e.keyCode === 32) {
-    $("#c").toggle();
-  }
-});
