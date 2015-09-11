@@ -26,30 +26,21 @@
   <script src="js/ie-emulation-modes-warning.js"></script>
 
   <style type="text/css">
-    h1 {
-      font-weight: 100;
-    }
+    body  {   background-color: transparent;  }
+    h1    {   font-weight: 100;               }
 
-    h1 b {
-      font-weight: 400;
-    }
+    h1 b  {   font-weight: 400;               }
 
-    .img-container {
-      max-width: 200px;
-    }
+    .img-container { max-width: 200px;        }
 
-    .item {
-      max-height: 200px;
-    }
+    .item {   max-height: 200px;              }
 
     .nav-pills li, .nav-pills li a {
       color: #fff;
       background-color: #337ab7;
     }
 
-    .nav-pills li a:hover{
-      color: #000000;
-    }
+    .nav-pills li a:hover { color: #000000;   }
 
     canvas {
       position:absolute;
@@ -61,12 +52,8 @@
     }
 
     @media (min-width: 768px) {
-      .img-container {
-        max-width: 300px;
-      }
-      .item {
-        max-height: 300px;
-      }
+      .img-container {  max-width: 300px;   }
+      .item {           max-height: 300px;  }
     }
 
     @media (min-width: 992px) {
@@ -106,9 +93,8 @@
     </div>
   </div>
 
-  <canvas id="c" style="display:block"></canvas>
+  <canvas id="c" style="display:none"></canvas>
 
-  <script src="js/matrix.js"></script>
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -116,19 +102,7 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
-  <script>
-  $(document).ready(function(){
-    var matrix = true;
-    $(window).keypress(function(e) {
-      if (e.keyCode === 0 || e.keyCode === 32) {
-        if(matrix)
-          $("body").css("background-color","transparent");
-        else
-          $("body").css("background-color","#333");
-        matrix = !matrix;
-      }
-    });
-  });
-  </script>
+  <script src="js/matrix.js"></script>
+  <script src="js/project.js"></script>
 </body>
 </html>

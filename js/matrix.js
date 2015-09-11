@@ -1,3 +1,4 @@
+/* Global variables */
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
@@ -5,10 +6,10 @@ var ctx = c.getContext("2d");
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
-//chinese characters - taken from the unicode charset
-var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+//letters characters - taken from the unicode charset
+var m_letters = "VICTORWINBERG";
 //converting the string into an array of single characters
-chinese = chinese.split("");
+m_letters = m_letters.split("");
 
 var font_size = 10;
 var columns = c.width/font_size; //number of columns for the rain
@@ -20,20 +21,15 @@ for(var x = 0; x < columns; x++)
 	drops[x] = 1;
 
 //drawing the characters
-function draw()
-{
-	//Black BG for the canvas
-	//translucent BG to show trail
-	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-	ctx.fillRect(0, 0, c.width, c.height);
+function drawMatrix() {
+	clear();
 
 	ctx.fillStyle = "#0F0"; //green text
 	ctx.font = font_size + "px arial";
 	//looping over drops
-	for(var i = 0; i < drops.length; i++)
-	{
-		//a random chinese character to print
-		var text = chinese[Math.floor(Math.random()*chinese.length)];
+	for(var i = 0; i < drops.length; i++) {
+		//a random letters character to print
+		var text = m_letters[Math.floor(Math.random()*m_letters.length)];
 		//x = i*font_size, y = value of drops[i]*font_size
 		ctx.fillText(text, i*font_size, drops[i]*font_size);
 
@@ -46,5 +42,17 @@ function draw()
 		drops[i]++;
 	}
 }
+setInterval(drawMatrix, 33);
 
-setInterval(draw, 33);
+function clear() {
+	//Black BG for the canvas
+	//translucent BG to show trail
+	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+	ctx.fillRect(0, 0, c.width, c.height);
+}
+
+$(window).keypress(function(e) {
+  if (e.keyCode === 0 || e.keyCode === 32) {
+    $("#c").toggle();
+  }
+});
