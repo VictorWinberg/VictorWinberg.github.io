@@ -12,6 +12,10 @@ body {
   text-align: center;
 }
 
+a {
+  -webkit-animation: hue 40s infinite linear;
+}
+
 img {
   vertical-align: text-bottom;
 }
@@ -63,4 +67,10 @@ img {
   .cover-container {
     width: 700px;
   }
+}
+
+@-webkit-keyframes hue {
+  from {  -webkit-filter: hue-rotate(0deg);   }
+
+  to {    -webkit-filter: hue-rotate(-360deg);}
 }
