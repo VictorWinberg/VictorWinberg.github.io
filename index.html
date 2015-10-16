@@ -26,39 +26,7 @@
   <script src="js/ie-emulation-modes-warning.js"></script>
 
   <style type="text/css">
-    body  {   background-color: transparent;  }
-    h1    {   font-weight: 100;               }
-
-    h1 b  {   font-weight: 400;               }
-
-    .img-container { max-width: 200px;        }
-
-    .item {   max-height: 200px;              }
-
-    .nav-pills li, .nav-pills li a {
-      color: #fff;
-      background-color: #337ab7;
-    }
-
-    .nav-pills li a:hover { color: #000000;   }
-
-    canvas {
-      position:absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    @media (min-width: 768px) {
-      .img-container {  max-width: 300px;   }
-      .item {           max-height: 300px;  }
-    }
-
-    @media (min-width: 992px) {
-
-    }
+    body  {  background-color: transparent; }
   </style>
 </head>
 
@@ -69,6 +37,26 @@
         <nav class="nav nav-tabs navbar-right">
           <li><a href="CV.pdf" target="_blank">Download CV</a></li>
         </nav>
+
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="dropdown-header">For companies</li>
+                <li><a href="budcom.se">Budcom.se</a></li>
+                <li><a href="#">Ynnor bilsök</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">For ideel</li>
+                <li><a href="http://www.teknikfokus.se/">Teknikfokus 2016</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">For fun</li>
+                <li><a href="http://ereuntzdag.se/">ereuntzdag.se</a></li>
+                <li><a href="LHS">Last Hen Standing</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
 
         <div class="center-block img-container animated fadeInDown">
           <img src="img/dat14vwi.jpg" class="animated infinite pulse img-circle img-responsive">
