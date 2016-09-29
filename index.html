@@ -75,9 +75,12 @@
             <li><a href="https://www.youtube.com/user/VictorW95" class="fa fa-youtube fa-2x" target="_blank"></a></li>
             <li><a href="https://se.linkedin.com/in/victorwinberg" class="fa fa-linkedin fa-2x" target="_blank"></a></li>
             <li><a href="mailto:dat14vwi@student.lu.se" class="fa fa-envelope-o fa-2x" target="_blank"></a></li>
+            <li><a id="popupBtn" class="fa fa-github-square fa-2x" style="display: none"href="javascript:void(0)" onclick="document.getElementById('popup').style.display='block';document.getElementById('popupBtn').style.display='none'"></a></li>
           </ul>
         </div>
-      </div>
+        <div id="popup" class="popup"><a href="javascript:void(0)" onclick="document.getElementById('popup').style.display='none';document.getElementById('popupBtn').style.display='block'">X</a>
+          <div class="github-card" data-github="VictorWinberg" data-width="300" data-height="" data-theme="default"></div>
+        </div>
     </div>
   </div>
 
@@ -93,5 +96,6 @@
   <script src="js/matrix.js"></script>
   <script src="js/project.js"></script>
   <script src="js/style.js"></script>
+  <script src="js/widget.js"></script>
 </body>
 </html>
