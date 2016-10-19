@@ -23,8 +23,6 @@
   <link href="css/bootstrap-social.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
 
-  <script src="js/ie-emulation-modes-warning.js"></script>
-
   <style type="text/css">
     body  {  background-color: transparent; }
   </style>
@@ -44,7 +42,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Projects <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">For students</li>
-                <li><a href="Datateknik">Datateknik material</a></li>
+                <li><a href="Datateknik">Datateknik</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">For companies</li>
                 <li><a href="http://www.lunicore.se">Lunicore</a></li>
@@ -55,7 +53,6 @@
                 <li class="dropdown-header">For fun</li>
                 <li><a href="http://ereuntzdag.club/ereuntzdag.se/">ereuntzdag.se</a></li>
                 <!--<li><a href="http://ereuntzdag.club/">ereuntzdag.club</a></li>-->
-                <li><a href="LHS">Last Hen Standing</a></li>
               </ul>
             </li>
           </ul>
@@ -78,10 +75,10 @@
             <li><a href="https://www.youtube.com/user/VictorW95" class="fa fa-youtube fa-2x" target="_blank"></a></li>
             <li><a href="https://se.linkedin.com/in/victorwinberg" class="fa fa-linkedin fa-2x" target="_blank"></a></li>
             <li><a href="mailto:dat14vwi@student.lu.se" class="fa fa-envelope-o fa-2x" target="_blank"></a></li>
-            <li><a id="popupBtn" class="fa fa-github-square fa-2x" style="display: none"href="javascript:void(0)" onclick="document.getElementById('popup').style.display='block';document.getElementById('popupBtn').style.display='none'"></a></li>
+            <li><a id="popupBtn" style="display: none;" href="javascript:void(0)" onclick="document.getElementById('popup').style.display='block';document.getElementById('popupBtn').style.display='none'"><img style="width:24px;height:24px" src="img/v_32x32.png" alt="V"></a></li>
           </ul>
         </div>
-        <div id="popup" class="popup"><a href="javascript:void(0)" onclick="document.getElementById('popup').style.display='none';document.getElementById('popupBtn').style.display='block'">X</a>
+        <div id="popup" class="popup" style="display: none"><a href="javascript:void(0)" onclick="document.getElementById('popup').style.display='none';document.getElementById('popupBtn').style.display='block'">X</a>
           <div class="github-card" data-github="VictorWinberg" data-width="300" data-height="" data-theme="default"></div>
         </div>
     </div>
@@ -92,13 +89,17 @@
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="js/ie10-viewport-bug-workaround.js"></script>
-  <script src="js/matrix.js"></script>
-  <script src="js/project.js"></script>
-  <script src="js/style.js"></script>
-  <script src="js/widget.js"></script>
+  <script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+  if ($(window).width() > 768) {
+    document.write('<script type="text/javascript" src="js/matrix.js"><\/script>');
+    document.write('<script type="text/javascript" src="js/project.js"><\/script>');
+    document.write('<script type="text/javascript" src="js/widget.js"><\/script>');
+    document.getElementById('popup').style.display='block';
+  }
+  </script>
 </body>
 </html>
