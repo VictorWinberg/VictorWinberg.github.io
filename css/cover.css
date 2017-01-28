@@ -75,6 +75,7 @@ canvas {
 @media (min-width: 768px) {
   /* Start the vertical centering */
   .site-wrapper-inner { vertical-align: middle; }
+  
   /* Handle the widths */
   .cover-container    { width: 80%;             }
 
@@ -86,23 +87,21 @@ canvas {
   .img-container {  max-width: 300px;   }
   .item {           max-height: 300px;  }
 
-  /* Webkit syntax */
+ img   {   -webkit-animation: zoom 10s infinite ease-in-out;
+            animation: zoom 10s infinite ease-in-out; }
   @-webkit-keyframes zoom {
     0% {-webkit-transform: scale(1,1);}
     50% {-webkit-transform: scale(1.2,1.2);}
     100% {-webkit-transform: scale(1,1);}}
-  @-webkit-keyframes hue {
-    from {  -webkit-filter: hue-rotate(0deg);   }
-    to {    -webkit-filter: hue-rotate(-360deg);}}
-  a, .dropdown-menu>li>a     {-webkit-animation: hue 40s infinite linear; animation: hue 40s infinite linear;}
-  img   {   -webkit-animation: zoom 10s infinite ease-in-out;
-            animation: zoom 10s infinite ease-in-out; }
-
-  /* Standard syntax */
   @keyframes zoom {
     0% {transform: scale(1,1);}
     50% {transform: scale(1.2,1.2);}
     100% {transform: scale(1,1);}}
+  
+  a, .dropdown-menu>li>a { -webkit-animation: hue 40s infinite linear; animation: hue 40s infinite linear; }
+  @-webkit-keyframes hue {
+    from {  -webkit-filter: hue-rotate(0deg);   }
+    to {    -webkit-filter: hue-rotate(-360deg);}}
   @keyframes hue {
     from {  filter: hue-rotate(0deg);   }
     to {    filter: hue-rotate(-360deg);}}
