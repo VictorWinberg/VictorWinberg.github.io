@@ -87,7 +87,7 @@ canvas {
     z-index: 1002;
     text-align: right;
     vertical-align: text-top;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .img-container {  max-width: 300px;   }
