@@ -1,0 +1,198 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #444;
+  background-color: #333;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.75em; }
+
+nav {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+nav ul {
+  background-color: #333;
+}
+
+nav li a {
+  display: block;
+  color: #eee;
+  padding: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav li img {
+  display: none;
+}
+
+nav li a.active {
+  background-color: #888;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+main {
+  padding: 2em;
+  background: #eee;
+}
+
+footer {
+  color: #eee;
+  padding: 2em;
+  background: #333;
+}
+
+table, tbody, tr, td {
+  display: block;
+}
+
+tbody {
+  font-size: 80%;
+  overflow: hidden;
+}
+
+tbody tr {
+  float: left;
+  width: 50%;
+}
+
+tbody tr td {
+  margin: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.fit {
+  object-fit: contain;
+  width: 5em;
+  height: 5em;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+.date {
+  color: #888;
+}
+
+.title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tbody tr:hover > td.title {
+  background: rgba(240,230,140, 0.4);
+  font-size: 105%;
+}
+
+.location {
+  font-weight: normal;
+}
+
+.description {
+  font-size: 1.17em;
+}
+
+.menu, .menu::before, .menu::after {
+  width: 35px;
+  height: 5px;
+  background-color: #eee;
+  transition: 0.4s;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu::before, .menu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu::before {
+  top: -11px;
+}
+
+.menu::after {
+  top: 11px;
+}
+
+label[for=drawer-toggle] {
+  display: block;
+  cursor: pointer;
+  width: 41px;
+  margin: 0 0 0 auto;
+  padding: 17px 0;
+}
+
+#drawer-toggle {
+  display: none;
+}
+
+#drawer-toggle:checked ~ nav {
+  opacity: 1;
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::before {
+    transform: rotate(270deg) translate(-11px, 0px);
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu {
+  transform: rotate(45deg);
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::after {
+  transform: rotate(45deg) translate(-200px, 100px);
+  opacity: 0;
+}
+
+@media (min-width: 800px) {
+  nav {
+    display: block;
+    position: relative;
+    opacity: 1;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav li img {
+    display: block;
+    padding: 0 1em;
+  }
+
+  .container {
+    width: 800px;
+  }
+
+  label[for=drawer-toggle] {
+    display: none;
+  }
+}

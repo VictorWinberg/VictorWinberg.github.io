@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="/css/globalreset.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Victor Winberg Portfolio</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="centered">
+        <input type="checkbox" id="drawer-toggle"/>
+        <label for="drawer-toggle">
+          <div class="menu"></div>
+        </label>
+
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/html/work">Work</a></li>
+            <li><img src="/img/common/logo.svg" alt="My github logotype of the letter V"/></li>
+            <li><a href="/html/contact" class="active">Contact</a></li>
+            <li><a href="/html/about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <form>
+          <h1>Contact</h1>
+
+          <p>
+            <label for="name">Name:</label><br/>
+            <input type="text" name="name" id="name"><br/>
+          </p>
+
+          <p>
+            <label for="email">Email:</label><br/>
+            <input type="text" name="email" id="email" required><br/>
+          </p>
+
+          <p>
+            <label for="phone">Phone Number:</label><br/>
+            <input type="text" name="phone" id="phone"><br/>
+          </p>
+
+          <p>
+            <label for="subject">Subject:</label><br/>
+            <input type="text" name="subject" id="subject"><br/>
+          </p>
+
+          <p>
+            <label for="message">Meddelande:</label><br/>
+            <textarea name="message" id="message" required></textarea>
+          </p>
+
+          <p>
+            <input type="submit" value="Send">
+          </p>
+        </form>
+      </main>
+
+      <footer>
+        <span>© Copyright 2018 | Victor Winberg</span>
+      </footer>
+    </div>
+  </body>
+</html>
