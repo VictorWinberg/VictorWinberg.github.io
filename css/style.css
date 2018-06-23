@@ -170,7 +170,7 @@ label[for=drawer-toggle] {
   opacity: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   nav {
     display: block;
     position: relative;
@@ -189,7 +189,7 @@ label[for=drawer-toggle] {
   }
 
   .container {
-    width: 800px;
+    max-width: 800px;
   }
 
   label[for=drawer-toggle] {
