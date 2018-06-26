@@ -33,16 +33,18 @@ nav li a {
   text-transform: uppercase;
 }
 
-nav li img {
-  display: none;
-}
-
 nav li a.active {
   background-color: #888;
 }
 
 nav li a:hover:not(.active) {
   background-color: #111;
+}
+
+nav li a img {
+  margin: -1.5em 0;
+  width: auto;
+  height: 4em;
 }
 
 header {
@@ -122,6 +124,73 @@ tbody tr:hover > td.title {
   font-size: 1.17em;
 }
 
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  color: #eee;
+  text-align: center;
+  font-weight: normal;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  transition: all ease-in-out 300ms;
+}
+
+.item:hover {
+  background-blend-mode: none;
+  background-position: top center;
+  background-color: transparent;
+  transform: scale(1.01);
+}
+
+.item p {
+  padding: 0 2em;
+  transition: all ease-in-out 300ms;
+}
+
+.item:hover p {
+  opacity: 0;
+}
+
+.item::before {
+  content: '';
+  padding-top: 100%;
+}
+
+.item.large {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.item.tall {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
+.item.one      { background-image: url(../img/gallery/stab.jpg); }
+.item.two      { background-image: url(../img/gallery/nollning.jpg); }
+.item.three    { background-image: url(../img/gallery/lost_city_pompeii.jpg); }
+.item.four     { background-image: url(../img/gallery/program.jpg); }
+.item.five     { background-image: url(../img/gallery/marseille_france.jpg); }
+.item.six      { background-image: url(../img/gallery/colosseum_rome.jpg); }
+.item.seven    { background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg); }
+.item.eight    { background-image: url(../img/gallery/genoa_italy.jpg); }
+.item.nine     { background-image: url(../img/gallery/villach_austria.jpg); }
+.item.ten      { background-image: url(../img/gallery/trdelnik_prague.jpg); }
+.item.eleven   { background-image: url(../img/gallery/barcelona_spain.jpg); }
+.item.twelve   { background-image: url(../img/gallery/leaning_tower_pisa.jpg); }
+.item.thirteen { background-image: url(../img/gallery/blue_lagoon_ayia_napa.jpg); }
+.item.fourteen { background-image: url(../img/gallery/la_folie_douce_val_thorens.jpg); }
+.item.fifteen  { background-image: url(../img/gallery/zion_national_park.jpg); }
+
 .menu, .menu::before, .menu::after {
   width: 35px;
   height: 5px;
@@ -190,13 +259,22 @@ label[for=drawer-toggle] {
     justify-content: center;
   }
 
-  nav li img {
-    display: block;
-    padding: 0 1em;
-  }
+  nav ul li:nth-child(1) {  order: 3; }
+  nav ul li:nth-child(2) {  order: 1; }
+  nav ul li:nth-child(3) {  order: 2; }
+  nav ul li:nth-child(4) {  order: 4; }
+  nav ul li:nth-child(5) {  order: 5; }
 
   .container {
-    max-width: 800px;
+    max-width: 1280px;
+  }
+
+  .portfolio {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .item.ten {
+    grid-row: 4 / span 2;
   }
 
   label[for=drawer-toggle] {
