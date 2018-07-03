@@ -37,6 +37,7 @@ nav {
 
 nav ul {
   background-color: #333;
+  height: 100vh;
 }
 
 nav li a {
@@ -254,6 +255,7 @@ label[for=drawer-toggle] {
 
   nav ul {
     display: flex;
+    height: auto;
     align-items: center;
     justify-content: center;
   }
