@@ -1,16 +1,30 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #444;
+  color: rgba(0,0,0,0.87);
   background-color: #333;
 }
 
-h1 { font-size: 2em; }
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+h1::first-letter {
+  color: red;
+}
+
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.17em; }
 h4 { font-size: 1em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.75em; }
+
+p  {
+  text-align: justify;
+  font-size: 0.90em;
+  line-height: 1.5em;
+  font-weight: bolder;
+  margin: 0.5em 0;
+}
 
 nav {
   position: absolute;
@@ -71,13 +85,12 @@ tbody {
   overflow: hidden;
 }
 
-tbody tr {
-  float: left;
-  width: 50%;
+tbody p {
+  text-align: left;
 }
 
 tbody tr td {
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .circle {
@@ -98,7 +111,7 @@ tbody tr td {
   margin: 0 auto;
 }
 
-.centered {
+.centered, .centered p {
   text-align: center;
 }
 
@@ -109,11 +122,6 @@ tbody tr td {
 .title {
   font-weight: bold;
   text-transform: uppercase;
-}
-
-tbody tr:hover > td.title {
-  background: rgba(240,230,140, 0.4);
-  font-size: 105%;
 }
 
 .location {
@@ -137,21 +145,12 @@ tbody tr:hover > td.title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ccc;
-  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
-  transition: all ease-in-out 300ms;
-}
-
-.item:hover {
-  background-blend-mode: none;
-  background-position: top center;
-  background-color: transparent;
-  transform: scale(1.01);
 }
 
 .item p {
+  font-weight: normal;
   padding: 0 2em;
   transition: all ease-in-out 300ms;
 }
@@ -265,12 +264,32 @@ label[for=drawer-toggle] {
   nav ul li:nth-child(4) {  order: 4; }
   nav ul li:nth-child(5) {  order: 5; }
 
+  tbody tr {
+    float: left;
+    width: 50%;
+  }
+
+  tbody tr:nth-child(odd) td {
+    margin-right: 10px;
+  }
+
   .container {
     max-width: 1280px;
   }
 
   .portfolio {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .item {
+    background-color: #ccc;
+    background-blend-mode: multiply;
+    transition: all ease-in-out 300ms;
+  }
+
+  .item:hover {
+    background-color: transparent;
+    transform: scale(1.01);
   }
 
   .item.ten {
