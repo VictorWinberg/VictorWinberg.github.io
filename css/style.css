@@ -1,16 +1,30 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #444;
+  color: rgba(0,0,0,0.87);
   background-color: #333;
 }
 
-h1 { font-size: 2em; }
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+h1::first-letter {
+  color: red;
+}
+
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.17em; }
 h4 { font-size: 1em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.75em; }
+
+p  {
+  text-align: justify;
+  font-size: 0.90em;
+  line-height: 1.5em;
+  font-weight: bolder;
+  margin: 0.5em 0;
+}
 
 nav {
   position: absolute;
@@ -23,6 +37,7 @@ nav {
 
 nav ul {
   background-color: #333;
+  height: 100vh;
 }
 
 nav li a {
@@ -53,13 +68,13 @@ header {
 
 main {
   padding: 2em;
-  background: #eee;
+  background-color: #eee;
 }
 
 footer {
   color: #eee;
   padding: 2em;
-  background: #333;
+  background-color: #333;
 }
 
 table, tbody, tr, td {
@@ -71,13 +86,46 @@ tbody {
   overflow: hidden;
 }
 
-tbody tr {
-  float: left;
-  width: 50%;
+tbody p {
+  text-align: left;
 }
 
 tbody tr td {
-  margin: 10px;
+  margin: 10px 0;
+}
+
+form input,
+form textarea,
+form button {
+  font-family: inherit;
+  font-size: 1em;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+form input,
+form textarea {
+  margin: 10px 0;
+}
+
+form textarea {
+  height: 10em;
+}
+
+form button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
+}
+
+form button:hover,
+form button:active,
+form button:focus {
+  background-color: green;
 }
 
 .circle {
@@ -98,7 +146,7 @@ tbody tr td {
   margin: 0 auto;
 }
 
-.centered {
+.centered, .centered p {
   text-align: center;
 }
 
@@ -109,11 +157,6 @@ tbody tr td {
 .title {
   font-weight: bold;
   text-transform: uppercase;
-}
-
-tbody tr:hover > td.title {
-  background: rgba(240,230,140, 0.4);
-  font-size: 105%;
 }
 
 .location {
@@ -137,21 +180,12 @@ tbody tr:hover > td.title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ccc;
-  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
-  transition: all ease-in-out 300ms;
-}
-
-.item:hover {
-  background-blend-mode: none;
-  background-position: top center;
-  background-color: transparent;
-  transform: scale(1.01);
 }
 
 .item p {
+  font-weight: normal;
   padding: 0 2em;
   transition: all ease-in-out 300ms;
 }
@@ -245,6 +279,77 @@ label[for=drawer-toggle] {
   transform: rotate(-270deg) translate(-11px, 0px);
 }
 
+/* skillbar list */
+dl {
+  position: relative;
+  z-index: 1;
+}
+
+/* skillbar title */
+dl dt {
+  display: inline-block;
+}
+
+/* skillbar percentage */
+dl dd {
+  display: inline-block;
+  float: right;
+}
+
+/* skillbar bar */
+dl div {
+  height: 3px;
+  width: 0;
+  margin-bottom: 0.5em;
+  background-color: #333;
+}
+
+/* skillbar bar widths */
+dl div.w100{ width: 100%; }
+dl div.w95 { width: 95%;  }
+dl div.w90 { width: 90%;  }
+dl div.w85 { width: 85%;  }
+dl div.w80 { width: 80%;  }
+dl div.w75 { width: 75%;  }
+dl div.w70 { width: 70%;  }
+dl div.w65 { width: 65%;  }
+dl div.w60 { width: 60%;  }
+dl div.w55 { width: 55%;  }
+dl div.w50 { width: 50%;  }
+dl div.w45 { width: 45%;  }
+dl div.w40 { width: 40%;  }
+dl div.w35 { width: 35%;  }
+dl div.w30 { width: 30%;  }
+dl div.w25 { width: 25%;  }
+dl div.w20 { width: 20%;  }
+dl div.w15 { width: 15%;  }
+dl div.w10 { width: 10%;  }
+
+/* skillbar bar background */
+dl div::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  /* to be below the parent element */
+  z-index: -1;
+}
+
+main ul li {
+  display: inline-block;
+  margin: 15px 15px 30px 0;
+}
+
+main ul li a {
+  padding: 15px;
+  background-color: #fff;
+}
+
+main ul li a:hover {
+  background-color: #ccc;
+}
+
 @media (min-width: 600px) {
   nav {
     display: block;
@@ -255,6 +360,7 @@ label[for=drawer-toggle] {
 
   nav ul {
     display: flex;
+    height: auto;
     align-items: center;
     justify-content: center;
   }
@@ -265,12 +371,32 @@ label[for=drawer-toggle] {
   nav ul li:nth-child(4) {  order: 4; }
   nav ul li:nth-child(5) {  order: 5; }
 
+  tbody tr {
+    float: left;
+    width: 50%;
+  }
+
+  tbody tr:nth-child(odd) td {
+    margin-right: 10px;
+  }
+
   .container {
     max-width: 1280px;
   }
 
   .portfolio {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .item {
+    background-color: #ccc;
+    background-blend-mode: multiply;
+    transition: all ease-in-out 300ms;
+  }
+
+  .item:hover {
+    background-color: transparent;
+    transform: scale(1.01);
   }
 
   .item.ten {

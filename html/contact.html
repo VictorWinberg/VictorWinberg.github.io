@@ -34,34 +34,22 @@
         <form>
           <h1>Contact</h1>
 
-          <p>
-            <label for="name">Name:</label><br/>
-            <input type="text" name="name" id="name"><br/>
-          </p>
+          <label for="name">Name: *</label><br/>
+          <input type="text" name="name" id="name" placeholder="Your name" required><br/>
 
-          <p>
-            <label for="email">Email:</label><br/>
-            <input type="text" name="email" id="email" required><br/>
-          </p>
+          <label for="email">Email: *</label><br/>
+          <input type="text" name="email" id="email" placeholder="Your e-mail address" required><br/>
 
-          <p>
-            <label for="phone">Phone Number:</label><br/>
-            <input type="text" name="phone" id="phone"><br/>
-          </p>
+          <label for="phone">Phone Number:</label><br/>
+          <input type="text" name="phone" id="phone" placeholder="Phone number"><br/>
 
-          <p>
-            <label for="subject">Subject:</label><br/>
-            <input type="text" name="subject" id="subject"><br/>
-          </p>
+          <label for="subject">Subject: *</label><br/>
+          <input type="text" name="subject" id="subject" placeholder="Subject" required><br/>
 
-          <p>
-            <label for="message">Meddelande:</label><br/>
-            <textarea name="message" id="message" required></textarea>
-          </p>
+          <label for="message">Meddelande: *</label><br/>
+          <textarea name="message" id="message" placeholder="Hi Victor ..." required></textarea>
 
-          <p>
-            <input type="submit" value="Send">
-          </p>
+          <button type="submit">Send</button>
         </form>
       </main>
 
