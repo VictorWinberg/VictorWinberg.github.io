@@ -1,23 +1,25 @@
+/* body font and background properties */
 body {
+  /* typography Google's Roboto with sans-serif as fallback */
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: rgba(0,0,0,0.87);
   background-color: #333;
 }
 
+/* headings font sizes */
 h1 {
   font-size: 2em;
   margin: 0.5em 0;
 }
-
-h1::first-letter {
-  color: red;
-}
-
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.17em; }
 h4 { font-size: 1em; }
 
+/* extra styling for h1 headers */
+h1::first-letter {color: red; }
+
+/* paragraph more distinct */
 p  {
   text-align: justify;
   font-size: 0.90em;
@@ -26,43 +28,8 @@ p  {
   margin: 0.5em 0;
 }
 
-nav {
-  position: absolute;
-  width: 100%;
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: 0.4s;
-}
-
-nav ul {
-  background-color: #333;
-  height: 100vh;
-}
-
-nav li a {
-  display: block;
-  color: #eee;
-  padding: 2em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav li a.active {
-  background-color: #888;
-}
-
-nav li a:hover:not(.active) {
-  background-color: #111;
-}
-
-nav li a img {
-  margin: -1.5em 0;
-  width: auto;
-  height: 4em;
-}
-
 header {
+  /* hide drawer-toggle overflow */
   overflow: hidden;
 }
 
@@ -77,12 +44,107 @@ footer {
   background-color: #333;
 }
 
+/* mobile navigation */
+nav {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+/* mobile navigation menu */
+nav ul {
+  background-color: #333;
+  height: 100vh;
+}
+
+/* navigation menu link items */
+nav li a {
+  display: block;
+  color: #eee;
+  padding: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* navigation selected menu link */
+nav li a.active {
+  background-color: #888;
+}
+
+/* navigation hovored menu link */
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+/* navigation menu image items */
+nav li a img {
+  margin: -1.5em 0;
+  width: auto;
+  height: 4em;
+}
+
+/* mobile navigation drawer */
+header .menu, header .menu::before, header .menu::after {
+  width: 35px;
+  height: 5px;
+  background-color: #eee;
+  transition: 0.4s;
+}
+
+header .menu {
+  position: relative;
+}
+
+header .menu::before, header .menu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+header .menu::before { top: -11px; }
+header .menu::after  { top: 11px;  }
+
+label[for=drawer-toggle] {
+  display: block;
+  cursor: pointer;
+  width: 41px;
+  margin: 0 0 0 auto;
+  padding: 17px 0;
+}
+
+#drawer-toggle {
+  display: none;
+}
+
+#drawer-toggle:checked ~ nav {
+  height: auto;
+  opacity: 1;
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::before {
+  transform: rotate(270deg) translate(-11px, 0px);
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu {
+  transform: rotate(45deg);
+}
+
+#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::after {
+  transform: rotate(-270deg) translate(-11px, 0px);
+}
+
+/* résumé table */
 table, tbody, tr, td {
   display: block;
 }
 
 tbody {
   font-size: 80%;
+  /* clears float context */
   overflow: hidden;
 }
 
@@ -94,6 +156,24 @@ tbody tr td {
   margin: 10px 0;
 }
 
+tbody tr td.date {
+  color: #888;
+}
+
+tbody tr td.title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tbody tr td.location {
+  font-weight: normal;
+}
+
+tbody tr td.description {
+  font-size: 1.17em;
+}
+
+/* contact form */
 form input,
 form textarea,
 form button {
@@ -128,45 +208,22 @@ form button:focus {
   background-color: green;
 }
 
-.circle {
-  border-radius: 50%;
-}
-
-.fit {
-  object-fit: contain;
-  width: 5em;
-  height: 5em;
-}
-
-.clear {
-  clear: both;
-}
-
-.container {
-  margin: 0 auto;
-}
-
+/* centering text */
 .centered, .centered p {
   text-align: center;
 }
 
-.date {
-  color: #888;
+/* circular shape */
+.circle {
+  border-radius: 50%;
 }
 
-.title {
-  font-weight: bold;
-  text-transform: uppercase;
+/* clear floating elements on both sides */
+.clear {
+  clear: both;
 }
 
-.location {
-  font-weight: normal;
-}
-
-.description {
-  font-size: 1.17em;
-}
-
+/* gallery grid */
 .portfolio {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -176,7 +233,7 @@ form button:focus {
   font-weight: normal;
 }
 
-.item {
+.portfolio .item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,100 +241,46 @@ form button:focus {
   background-position: center;
 }
 
-.item p {
+.portfolio .item p {
   font-weight: normal;
   padding: 0 2em;
   transition: all ease-in-out 300ms;
 }
 
-.item:hover p {
+.portfolio .item:hover p {
   opacity: 0;
 }
 
-.item::before {
+.portfolio .item::before {
   content: '';
   padding-top: 100%;
 }
 
-.item.large {
+.portfolio .item.large {
   grid-row: span 2;
   grid-column: span 2;
 }
 
-.item.tall {
+.portfolio .item.tall {
   grid-row: span 2;
   grid-column: span 1;
 }
 
-.item.one      { background-image: url(../img/gallery/stab.jpg); }
-.item.two      { background-image: url(../img/gallery/nollning.jpg); }
-.item.three    { background-image: url(../img/gallery/lost_city_pompeii.jpg); }
-.item.four     { background-image: url(../img/gallery/program.jpg); }
-.item.five     { background-image: url(../img/gallery/marseille_france.jpg); }
-.item.six      { background-image: url(../img/gallery/colosseum_rome.jpg); }
-.item.seven    { background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg); }
-.item.eight    { background-image: url(../img/gallery/genoa_italy.jpg); }
-.item.nine     { background-image: url(../img/gallery/villach_austria.jpg); }
-.item.ten      { background-image: url(../img/gallery/trdelnik_prague.jpg); }
-.item.eleven   { background-image: url(../img/gallery/barcelona_spain.jpg); }
-.item.twelve   { background-image: url(../img/gallery/leaning_tower_pisa.jpg); }
-.item.thirteen { background-image: url(../img/gallery/blue_lagoon_ayia_napa.jpg); }
-.item.fourteen { background-image: url(../img/gallery/la_folie_douce_val_thorens.jpg); }
-.item.fifteen  { background-image: url(../img/gallery/zion_national_park.jpg); }
-
-.menu, .menu::before, .menu::after {
-  width: 35px;
-  height: 5px;
-  background-color: #eee;
-  transition: 0.4s;
-}
-
-.menu {
-  position: relative;
-}
-
-.menu::before, .menu::after {
-  content: '';
-  position: absolute;
-  left: 0;
-}
-
-.menu::before {
-  top: -11px;
-}
-
-.menu::after {
-  top: 11px;
-}
-
-label[for=drawer-toggle] {
-  display: block;
-  cursor: pointer;
-  width: 41px;
-  margin: 0 0 0 auto;
-  padding: 17px 0;
-}
-
-#drawer-toggle {
-  display: none;
-}
-
-#drawer-toggle:checked ~ nav {
-  height: auto;
-  opacity: 1;
-}
-
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::before {
-  transform: rotate(270deg) translate(-11px, 0px);
-}
-
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu {
-  transform: rotate(45deg);
-}
-
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::after {
-  transform: rotate(-270deg) translate(-11px, 0px);
-}
+.portfolio .item.one      { background-image: url(../img/gallery/stab.jpg); }
+.portfolio .item.two      { background-image: url(../img/gallery/nollning.jpg); }
+.portfolio .item.three    { background-image: url(../img/gallery/lost_city_pompeii.jpg); }
+.portfolio .item.four     { background-image: url(../img/gallery/program.jpg); }
+.portfolio .item.five     { background-image: url(../img/gallery/marseille_france.jpg); }
+.portfolio .item.six      { background-image: url(../img/gallery/colosseum_rome.jpg); }
+.portfolio .item.seven    { background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg); }
+.portfolio .item.eight    { background-image: url(../img/gallery/genoa_italy.jpg); }
+.portfolio .item.nine     { background-image: url(../img/gallery/villach_austria.jpg); }
+.portfolio .item.ten      { background-image: url(../img/gallery/trdelnik_prague.jpg); }
+.portfolio .item.eleven   { background-image: url(../img/gallery/barcelona_spain.jpg); }
+.portfolio .item.twelve   { background-image: url(../img/gallery/leaning_tower_pisa.jpg); }
+.portfolio .item.thirteen { background-image: url(../img/gallery/blue_lagoon_ayia_napa.jpg); }
+.portfolio .item.fourteen { background-image: url(../img/gallery/la_folie_douce_val_thorens.jpg); }
+.portfolio .item.fifteen  { background-image: url(../img/gallery/zion_national_park.jpg); }
 
 /* skillbar list */
 dl {
@@ -336,6 +339,7 @@ dl div::after {
   z-index: -1;
 }
 
+/* social inline links */
 main ul li {
   display: inline-block;
   margin: 15px 15px 30px 0;
@@ -351,6 +355,13 @@ main ul li a:hover {
 }
 
 @media (min-width: 600px) {
+  /* desktop container */
+  .container {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  /* desktop navigation */
   nav {
     display: block;
     position: relative;
@@ -358,6 +369,7 @@ main ul li a:hover {
     opacity: 1;
   }
 
+  /* desktop navigation menu */
   nav ul {
     display: flex;
     height: auto;
@@ -365,12 +377,14 @@ main ul li a:hover {
     justify-content: center;
   }
 
+  /* desktop navigation menu item order */
   nav ul li:nth-child(1) {  order: 3; }
   nav ul li:nth-child(2) {  order: 1; }
   nav ul li:nth-child(3) {  order: 2; }
   nav ul li:nth-child(4) {  order: 4; }
   nav ul li:nth-child(5) {  order: 5; }
 
+  /* resume table row */
   tbody tr {
     float: left;
     width: 50%;
@@ -380,29 +394,27 @@ main ul li a:hover {
     margin-right: 10px;
   }
 
-  .container {
-    max-width: 1280px;
-  }
-
+  /* desktop gallery grid */
   .portfolio {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .item {
+  .portfolio .item {
     background-color: #ccc;
     background-blend-mode: multiply;
     transition: all ease-in-out 300ms;
   }
 
-  .item:hover {
+  .portfolio .item:hover {
     background-color: transparent;
     transform: scale(1.01);
   }
 
-  .item.ten {
+  .portfolio .item.ten {
     grid-row: 4 / span 2;
   }
 
+  /* hide drawer toggle */
   label[for=drawer-toggle] {
     display: none;
   }
