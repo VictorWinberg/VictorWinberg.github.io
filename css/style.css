@@ -362,6 +362,8 @@ main ul li {
 main ul li a {
   padding: 15px;
   background-color: #fff;
+  color: black;
+  text-decoration: none;
 }
 
 main ul li a:hover {
