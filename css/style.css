@@ -245,6 +245,18 @@ form button:focus {
   border-radius: 50%;
 }
 
+/* debug style */
+.img-debug {
+  animation: filter-animation 10s infinite;
+  transform: scaleX(-1);
+}
+
+@keyframes filter-animation {
+  0%   { filter: hue-rotate(100deg) contrast(1.5); }
+  50%  { filter: hue-rotate(200deg) contrast(1.5); }
+  100% { filter: hue-rotate(100deg) contrast(1.5); }
+}
+
 /* clear floating elements on both sides */
 .clear {
   clear: both;
