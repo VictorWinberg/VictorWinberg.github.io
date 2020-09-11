@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
+    <link rel="stylesheet" type="text/css" href="./css/globalreset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script type="text/javascript" src="./js/script.js"></script>
+    <link rel="icon" href="./img/logo.png" />
+    <title>Victor Winberg Portfolio</title>
+  </head>
+
+  <body>
+    <div class="container centered">
+      <header>
+        <input type="checkbox" id="drawer-toggle" />
+        <label for="drawer-toggle">
+          <span class="menu"></span>
+        </label>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="./" class="active"><img src="./img/common/logo.svg" alt="My github logotype of the letter V" /></a>
+            </li>
+            <li><a href="./resume">Résumé</a></li>
+            <li><a href="./gallery">Gallery</a></li>
+            <li><a href="./projects">Projects</a></li>
+            <li><a href="./about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <h1>Debug.css</h1>
+
+        <b>
+          <a
+            href='javascript:/* original gist.github.com/addyosmani/fd3999ea7fce242756b1 */!function(a){for(a.__CSSDebug__=!a.__CSSDebug__,i=0;A=document.all[i++];)A.style.outline=a.__CSSDebug__?"solid hsl("+18*-(A+A).length+",99%,50%)1px":null}(window);'
+          >
+            Debug CSS Colorful
+          </a>
+        </b>
+        <br />
+
+        <b>
+          <a
+            href='javascript:/* debug.css | MIT License | zaydek.github.com/debug.css */ if (!("is_debugging" in window)) { is_debugging = false; var debug_el = document.createElement("style"); debug_el.append(document.createTextNode(`*:not(path):not(g) { color: hsla(210, 100%, 100%, 0.9) !important; background: hsla(210, 100%,  50%, 0.5) !important; outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important; box-shadow: none !important; filter: none !important; }`)); } function enable_debugger() { if (!is_debugging) { document.head.appendChild(debug_el); is_debugging = true; } } function disable_debugger() { if (is_debugging) { document.head.removeChild(debug_el); is_debugging = false; } } !is_debugging ? enable_debugger() : disable_debugger();'
+          >
+            Debug CSS X-ray
+          </a>
+        </b>
+        <br />
+
+        <br />
+
+        <i>Click on the link to test it</i><br />
+        <i>Drag it to bookmarks to save it</i><br />
+      </main>
+
+      <footer>
+        <span>© Copyright <span id="year">2019</span> | Victor Winberg</span>
+      </footer>
+    </div>
+  </body>
+</html>
