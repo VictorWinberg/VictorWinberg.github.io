@@ -5,6 +5,7 @@ body {
   font-weight: 300;
   color: rgba(0,0,0,0.87);
   background-color: #333;
+  min-height: 66vh;
 }
 
 /* headings font sizes */
@@ -28,12 +29,24 @@ p  {
   margin: 0.5em 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+
 header {
   /* hide drawer-toggle overflow */
   overflow: hidden;
 }
 
 main {
+  flex-grow: 1;
   padding: 2em;
   background-color: #eee;
 }
@@ -215,8 +228,15 @@ form button:focus {
   background-color: green;
 }
 
-/* centering text */
-.centered, .centered p {
+/* centering */
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.centered p {
   text-align: center;
 }
 
