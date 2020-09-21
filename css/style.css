@@ -5,7 +5,7 @@ body {
   font-weight: 300;
   color: rgba(0,0,0,0.87);
   background-color: #333;
-  min-height: 66vh;
+  min-height: 100vh;
 }
 
 /* headings font sizes */
@@ -46,15 +46,22 @@ header {
 }
 
 main {
-  flex-grow: 1;
+  min-height: 50vh;
   padding: 2em;
   background-color: #eee;
 }
 
 footer {
+  flex-grow: 1;
+  position: relative;
   color: #eee;
-  padding: 2em;
+  padding: 2.5em 2em;
   background-color: #333;
+}
+
+footer > span {
+  position: absolute;
+  bottom: 2em;
 }
 
 /* mobile navigation */
@@ -230,10 +237,13 @@ form button:focus {
 
 /* centering */
 .centered {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .centered p {
@@ -340,7 +350,7 @@ ul.skill li span:nth-child(1) {
 
 /* skillbar percentage */
 ul.skill li span:nth-child(2) {
-  display: inline-block;
+  display: block;
   float: right;
 }
 
@@ -386,20 +396,24 @@ ul.skill li span.w15 { width: 15%;  }
 ul.skill li span.w10 { width: 10%;  }
 
 /* social inline links */
-main ul li {
+ul.social li {
   display: inline-block;
   margin: 15px 15px 30px 0;
 }
 
-main ul li a {
+ul.social li a {
   padding: 15px;
   background-color: #fff;
   color: black;
   text-decoration: none;
 }
 
-main ul li a:hover {
-  background-color: #ccc;
+ul.social li a:hover {
+  background-color: khaki;
+}
+
+ul.social li a img {
+  vertical-align: middle;
 }
 
 @media (min-width: 600px) {
@@ -421,7 +435,6 @@ main ul li a:hover {
   nav ul {
     display: flex;
     height: auto;
-    align-items: center;
     justify-content: center;
   }
 

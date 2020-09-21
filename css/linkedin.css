@@ -1,0 +1,28 @@
+.LI-profile-badge {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.LI-name-container {
+  display: block !important;
+}
+
+.LI-profile-pic-container,
+.LI-name,
+.LI-footer {
+  display: none !important;
+}
+
+.LI-badge-container,
+.LI-col {
+  width: 100% !important;
+}
+
+@media (min-width: 600px) {
+  .LI-profile-badge {
+    display: block;
+  }
+}
