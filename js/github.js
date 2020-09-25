@@ -23,16 +23,12 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
 
   const css = `
     #github {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: relative;
     }
 
     .github {
       position: absolute;
       z-index: 1;
-      bottom: 1em;
       left: 0;
       right: 0;
       margin: 1em;
