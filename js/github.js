@@ -28,7 +28,6 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
 
     .github {
       position: absolute;
-      background: red;
       z-index: 1;
       top: 0;
       left: 0;
@@ -43,7 +42,7 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
       text-decoration: none;
       color: rgba(0,0,0,0.87);
       border: 1px solid;
-      background: white;
+      background: red;
     }
 
     .github a:hover {
