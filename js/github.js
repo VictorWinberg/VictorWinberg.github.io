@@ -42,7 +42,7 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
       text-decoration: none;
       color: rgba(0,0,0,0.87);
       border: 1px solid;
-      background: red;
+      background: white;
     }
 
     .github a:hover {
