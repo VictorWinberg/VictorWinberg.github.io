@@ -402,24 +402,24 @@ ul.skill li span.w20 { width: 20%;  }
 ul.skill li span.w15 { width: 15%;  }
 ul.skill li span.w10 { width: 10%;  }
 
-/* social inline links */
-ul.social li {
+/* social and resume inline links */
+ul.boxes li {
   display: inline-block;
   margin: 15px 15px 30px 0;
 }
 
-ul.social li a {
+ul.boxes li a {
   padding: 15px;
   background-color: #fff;
   color: black;
   text-decoration: none;
 }
 
-ul.social li a:hover {
+ul.boxes li a:hover {
   background-color: khaki;
 }
 
-ul.social li a img {
+ul.boxes li a img {
   vertical-align: middle;
 }
 
