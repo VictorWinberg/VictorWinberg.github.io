@@ -28,6 +28,7 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
 
     .github {
       position: absolute;
+      background: red;
       z-index: 1;
       top: 0;
       left: 0;
