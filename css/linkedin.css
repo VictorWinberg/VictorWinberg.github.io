@@ -1,9 +1,11 @@
 .LI-profile-badge {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0;
   left: 0;
+  right: 0;
+  background: #eee;
+  z-index: 1;
 }
 
 .LI-name-container {
