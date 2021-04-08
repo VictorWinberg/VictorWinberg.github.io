@@ -323,11 +323,11 @@ form button:focus {
 }
 
 .portfolio .item.one      { background-image: url(../img/gallery/stab.jpg); }
-.portfolio .item.two      { background-image: url(../img/gallery/nollning.jpg); }
+.portfolio .item.two      { background-image: url(../img/gallery/program.jpg); }
 .portfolio .item.three    { background-image: url(../img/gallery/lost_city_pompeii.jpg); }
-.portfolio .item.four     { background-image: url(../img/gallery/program.jpg); }
+.portfolio .item.four     { background-image: url(../img/gallery/colosseum_rome.jpg); }
 .portfolio .item.five     { background-image: url(../img/gallery/marseille_france.jpg); }
-.portfolio .item.six      { background-image: url(../img/gallery/colosseum_rome.jpg); }
+.portfolio .item.six      { background-image: url(../img/gallery/nollning.jpg); }
 .portfolio .item.seven    { background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg); }
 .portfolio .item.eight    { background-image: url(../img/gallery/genoa_italy.jpg); }
 .portfolio .item.nine     { background-image: url(../img/gallery/villach_austria.jpg); }
