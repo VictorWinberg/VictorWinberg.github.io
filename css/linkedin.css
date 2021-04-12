@@ -6,6 +6,8 @@
   right: 0;
   background: #eee;
   z-index: 1;
+  padding-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .LI-badge-container {
@@ -36,4 +38,15 @@
   .LI-profile-badge {
     display: block;
   }
+}
+
+.sr-only,
+.profile-badge__content-profile-name,
+.profile-badge__content-profile-image,
+.profile-badge__cta-btn {
+  display: none;
+}
+.profile-badge__header-logo-icon svg {
+  width: 84px;
+  color: #0a66c2;
 }
