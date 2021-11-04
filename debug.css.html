@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background: darkgreen;">
+<html lang="en" style="width: 100%; height: 100%; background: #1f4037; background: linear-gradient(to right, #1f4037, #99f2c8);">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,10 +65,18 @@
       </footer>
     </div>
 
-    <script>
-      window.onload = function () {
+    <script lang="javascript">
+      window.setTimeout(function () {
         document.body.style.display = 'block';
-      }
+      }, 100)
+
+      window.setTimeout(function () {
+        document.body.style.display = 'none';
+      }, 150)
+
+      window.setTimeout(function () {
+        document.body.style.display = 'block';
+      }, 200)
     </script>
   </body>
 </html>

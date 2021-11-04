@@ -265,7 +265,7 @@ form button:focus {
 /* debug style */
 .img-debug {
   animation: filter-animation 10s infinite;
-  transform: scaleX(-1);
+  transform: scaleX(-1) rotate(180deg);
 }
 
 @keyframes filter-animation {
