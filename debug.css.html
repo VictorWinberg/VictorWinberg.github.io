@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background: darkgreen;">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@
     <title>Victor Winberg Portfolio</title>
   </head>
 
-  <body>
+  <body style="display: none;">
     <div class="container">
       <header>
         <input type="checkbox" id="drawer-toggle" />
@@ -33,7 +33,7 @@
       </header>
 
       <main class="centered">
-        <a href="./"><img class="circle img-debug" src="./img/about/profile.jpg" alt="My profile picture" height="200" width="200" /></a>
+        <div><a href="./"><img class="circle img-debug" src="./img/about/profile.jpg" alt="My profile picture" height="200" width="200" /></a></div>
         <h1>Debug.css</h1>
 
         <b>
@@ -64,5 +64,11 @@
         <span>© Copyright <span id="year">2020</span> | Victor Winberg</span>
       </footer>
     </div>
+
+    <script>
+      window.onload = function () {
+        document.body.style.display = 'block';
+      }
+    </script>
   </body>
 </html>
