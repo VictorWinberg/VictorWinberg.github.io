@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; height: 100%; background: #1f4037; background: linear-gradient(to right, #1f4037, #99f2c8);">
+<html
+  lang="en"
+  style="
+    width: 100%;
+    height: 100%;
+    background: #1f4037;
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+  "
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,700"
+    />
     <link rel="stylesheet" type="text/css" href="./css/globalreset.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <script type="text/javascript" src="./js/script.js"></script>
@@ -11,7 +23,7 @@
     <title>Victor Winberg Portfolio</title>
   </head>
 
-  <body style="display: none;">
+  <body style="display: none">
     <div class="container">
       <header>
         <input type="checkbox" id="drawer-toggle" />
@@ -22,7 +34,11 @@
         <nav>
           <ul>
             <li>
-              <a href="./" class="active"><img src="./img/common/logo.svg" alt="My github logotype of the letter V" /></a>
+              <a href="./" class="active"
+                ><img
+                  src="./img/common/logo.svg"
+                  alt="My github logotype of the letter V"
+              /></a>
             </li>
             <li><a href="./resume">Résumé</a></li>
             <li><a href="./gallery">Gallery</a></li>
@@ -33,7 +49,16 @@
       </header>
 
       <main class="centered">
-        <div><a href="./"><img class="circle img-debug" src="./img/about/profile.jpg" alt="My profile picture" height="200" width="200" /></a></div>
+        <div>
+          <a href="./"
+            ><img
+              class="circle img-debug"
+              src="./img/about/profile.jpg"
+              alt="My profile picture"
+              height="200"
+              width="200"
+          /></a>
+        </div>
         <h1>Debug.css</h1>
 
         <b>
@@ -53,7 +78,7 @@
           </a>
         </b>
         <br />
-        
+
         <b>
           <a
             href='javascript:var _cedit=document.body.contentEditable==="true"; document.body.spellcheck=false; document.body.contentEditable=(_cedit ? %27inherit%27 : %27true%27); document.body.style.border = _cedit ? %27%27:%273px solid red%27; document.designMode=_cedit?%27off%27:%27on%27; void 0'
@@ -65,13 +90,12 @@
 
         <b>
           <a
-            href='javascript:/* copy url link to clipboard */ !(function () { function copyToClipboard(text) { navigator.clipboard.writeText(text).then( function () { console.log("Copied", text); }, function (err) { alert("Could not copy text: ", err); } ); } switch (true) { case !!location.href.match(/^https:\/\/github.com\/.*\/pull\//): { var title = document.querySelector(".js-issue-title").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } case !!location.href.match(/^https:\/\/favro.com\/.*card=/): { var id = document.querySelector(".js-cardid").innerText.replace(/^DOK-/, "Dok-"); var title = document.querySelector(".js-card-details-title").value; return copyToClipboard(`[${id}: ${title}](${location.href})`); } case !!location.href.match(/^https:\/\/bitbucket.org\/.*\/pull-requests\//): { var title = document.querySelector("[data-qa=\"pr-header-page-header-wrapper\"] h1").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } default: { return copyToClipboard(`[${document.title}](${location.href})`); } } })(window);'
+            href='javascript:/* copy url link to clipboard */ !(function () { function copyToClipboard(text) { navigator.clipboard.writeText(text).then( function () { console.log("Copied", text); }, function (err) { alert("Could not copy text: ", err); } ); } switch (true) { case !!location.href.match(/^https:\/\/github.com\/.*\/pull\//): { var title = document.querySelector(".js-issue-title").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } case !!location.href.match(/^https:\/\/favro.com\/.*card=/): { var id = document.querySelector(".js-cardid").innerText.replace(/^DOK-/, "Dok-"); var title = document.querySelector(".js-card-details-title").value; return copyToClipboard(`[${id}: ${title}](${location.href})`); } case !!location.href.match( /^https:\/\/bitbucket.org\/.*\/pull-requests\// ): { var title = document.querySelector("[data-testid=\"pr-header\"] h1").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } default: { return copyToClipboard(`[${document.title}](${location.href})`); } } })(window);'
           >
             Copy URL (markdown)
           </a>
         </b>
         <br />
-
 
         <br />
 
