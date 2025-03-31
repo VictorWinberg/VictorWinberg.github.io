@@ -1,163 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-    <title>MicroJS</title>
-    <link rel="icon" href="./img/logo.png" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
-  </head>
-  <body>
-    <noscript>
-      <strong> We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue. </strong>
-    </noscript>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-    <div id="app" />
+  <title>MicroJS</title>
+  <link rel="icon" href="./img/logo.png" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
 
-    <script>
-      const app = ({ node, init, view }) => {
-        let el, attr, children;
-        const args = view(init);
+<body>
+  <noscript>
+    <strong> We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.
+    </strong>
+  </noscript>
 
-        // Manage args
-        if (!Array.isArray(args)) {
-          return node.appendChild(document.createTextNode(args));
-        } else if (Array.isArray(args[0])) {
-          return args.forEach((child) => app({ node: node, view: () => child }));
-        }
+  <div id="app" />
 
-        const [tagName, ...rest] = args;
-        if (rest.length === 1 && rest[0] && rest[0].constructor !== Object) {
-          [children] = rest;
-        } else {
-          [attr, children] = rest;
-        }
-        el = document.createElement(tagName);
+  <script>
+    const app = ({ node, init, view }) => {
+      let el, attr, children;
+      const args = view(init);
 
-        // Manage children
-        if (typeof children === "string" || typeof children === "number") {
-          const text = document.createTextNode(children);
-          el.appendChild(text);
-        } else if (Array.isArray(children) && Array.isArray(children[0])) {
-          children.forEach((child) => app({ node: el, view: () => child }));
-        } else if (children) {
-          app({ node: el, view: () => children });
-        }
+      // Manage args
+      if (!Array.isArray(args)) {
+        return node.appendChild(document.createTextNode(args));
+      } else if (Array.isArray(args[0])) {
+        return args.forEach((child) => app({ node: node, view: () => child }));
+      }
 
-        Object.entries(attr || []).forEach(([key, value]) => {
-          el.setAttribute(key, value);
-        });
-        node.appendChild(el);
-      };
+      const [tagName, ...rest] = args;
+      if (rest.length === 1 && rest[0] && rest[0].constructor !== Object) {
+        [children] = rest;
+      } else {
+        [attr, children] = rest;
+      }
+      el = document.createElement(tagName);
 
-      const Intro = ({ introTitle, introShort, introLong }) => [
-        ["h1", introTitle],
-        ["p", introShort],
-        ["p", introLong],
-      ];
+      // Manage children
+      if (typeof children === "string" || typeof children === "number") {
+        const text = document.createTextNode(children);
+        el.appendChild(text);
+      } else if (Array.isArray(children) && Array.isArray(children[0])) {
+        children.forEach((child) => app({ node: el, view: () => child }));
+      } else if (children) {
+        app({ node: el, view: () => children });
+      }
 
-      const Installation = ({ installationCode }) => [
-        ["h2", "Installation"],
-        [
-          "div",
-          { id: "installation" },
-          [
-            ["pre", ["code", installationCode]],
-            ["h3", "Options"],
-            [
-              "form",
-              [
-                ["input", { type: "radio", id: "option-1", value: "Option 1" }],
-                ["label", { for: "option-1" }, "Option 1"],
-                ["input", { type: "radio", id: "option-2", value: "Option 2" }],
-                ["label", { for: "option-2" }, "Option 2"],
-                ["input", { type: "radio", id: "option-3", value: "Option 3" }],
-                ["label", { for: "option-3" }, "Option 3"],
-              ],
-            ],
-          ],
-        ],
-      ];
-
-      const Goals = ({ goals }) => [
-        ["h2", { id: "goals" }, "Goals"],
-        ["ul", goals.map((goal) => ["li", goal])],
-      ];
-
-      const Elements = (state) => [
-        ["h2", { id: "element" }, "Element demos"],
-        ["p", "This is supposed to be a demo page so we need more elements!"],
-
-        ["h3", { id: "form-elements" }, "Form elements"],
-        [
-          "form",
-          [
-            ["label", { for: "email" }, "Email"],
-            ["input", { type: "email", name: "email", id: "email", placeholder: "john.doe@gmail.com" }],
-            ["label", { for: "id" }, "User id (read only)"],
-            ["input", { readonly: "", name: "id", id: "id", value: "04D6H89Z" }],
-            ["label", { for: "disabled" }, "Random disabled input"],
-            ["input", { disabled: "", name: "disabled", id: "disabled", placeholder: "Because why not?" }],
-            ["label", { for: "about" }, "About me"],
-            ["textarea", { name: "about", id: "about", placeholder: "I am a textarea..." }],
-            ["label", "Choose a Doe:"],
-            [
-              "div",
-              [
-                ["input", { type: "radio", id: "john", name: "drone", value: "john", checked: "" }],
-                ["label", { for: "john" }, "John Doe"],
-              ],
-            ],
-            [
-              "div",
-              [
-                ["input", { type: "radio", id: "jane", name: "drone", value: "jane", checked: "" }],
-                ["label", { for: "jane" }, "Jane Doe"],
-              ],
-            ],
-            [
-              "div",
-              [
-                ["input", { type: "radio", id: "johnny", name: "drone", value: "johnny", checked: "" }],
-                ["label", { for: "johnny" }, "Johnny Doe"],
-              ],
-            ],
-            ["br"],
-            ["input", { type: "checkbox", name: "remember", id: "remember", checked: "" }],
-            ["label", { for: "remember" }, "Remember me"],
-            ["input", { type: "submit", value: "Submit" }],
-            ["input", { type: "reset", value: "Reset" }],
-          ],
-        ],
-      ];
-
-      const Cat = (state) => [
-        ["h3", { id: "cat" }, "Cat"],
-        ["p", "Here is a cute kitten."],
-        ["img", { src: "https://placekitten.com/408/287", alt: "Example kitten" }],
-        ["hr"]
-      ];
-
-      app({
-        node: document.getElementById("app"),
-        init: {
-          introTitle: "Water.css",
-          introShort: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, reprehenderit!",
-          introLong:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem consequatur, natus laboriosam incidunt quam est aperiam dignissimos doloribus beatae id, aspernatur facilis? Molestiae eveniet nihil sint nam, animi commodi debitis!",
-          installationCode: "console.log('Hello World!');",
-          goals: ["Responsive", "Good code quality", "Good browser support", "Small size (&lt; 2kb)", "Beautiful", "No classes"],
-        },
-        view: (state) => [
-          Intro(state),
-          Installation(state),
-          Goals(state),
-          Cat(state),
-          Elements(state)
-        ],
+      Object.entries(attr || []).forEach(([key, value]) => {
+        el.setAttribute(key, value);
       });
-    </script>
-  </body>
+      node.appendChild(el);
+    };
+
+    const Intro = ({ introTitle, introShort, introLong }) => [
+      ["h1", introTitle],
+      ["p", introShort],
+      ["p", introLong],
+    ];
+
+    const Installation = ({ installationCode }) => [
+      ["h2", "Installation"],
+      [
+        "div",
+        { id: "installation" },
+        [
+          ["pre", ["code", installationCode]],
+          ["h3", "Options"],
+          [
+            "form",
+            [
+              ["input", { type: "radio", id: "option-1", value: "Option 1" }],
+              ["label", { for: "option-1" }, "Option 1"],
+              ["input", { type: "radio", id: "option-2", value: "Option 2" }],
+              ["label", { for: "option-2" }, "Option 2"],
+              ["input", { type: "radio", id: "option-3", value: "Option 3" }],
+              ["label", { for: "option-3" }, "Option 3"],
+            ],
+          ],
+        ],
+      ],
+    ];
+
+    const Goals = ({ goals }) => [
+      ["h2", { id: "goals" }, "Goals"],
+      ["ul", goals.map((goal) => ["li", goal])],
+    ];
+
+    const Elements = (state) => [
+      ["h2", { id: "element" }, "Element demos"],
+      ["p", "This is supposed to be a demo page so we need more elements!"],
+
+      ["h3", { id: "form-elements" }, "Form elements"],
+      [
+        "form",
+        [
+          ["label", { for: "email" }, "Email"],
+          ["input", { type: "email", name: "email", id: "email", placeholder: "john.doe@gmail.com" }],
+          ["label", { for: "id" }, "User id (read only)"],
+          ["input", { readonly: "", name: "id", id: "id", value: "04D6H89Z" }],
+          ["label", { for: "disabled" }, "Random disabled input"],
+          ["input", { disabled: "", name: "disabled", id: "disabled", placeholder: "Because why not?" }],
+          ["label", { for: "about" }, "About me"],
+          ["textarea", { name: "about", id: "about", placeholder: "I am a textarea..." }],
+          ["label", "Choose a Doe:"],
+          [
+            "div",
+            [
+              ["input", { type: "radio", id: "john", name: "drone", value: "john", checked: "" }],
+              ["label", { for: "john" }, "John Doe"],
+            ],
+          ],
+          [
+            "div",
+            [
+              ["input", { type: "radio", id: "jane", name: "drone", value: "jane", checked: "" }],
+              ["label", { for: "jane" }, "Jane Doe"],
+            ],
+          ],
+          [
+            "div",
+            [
+              ["input", { type: "radio", id: "johnny", name: "drone", value: "johnny", checked: "" }],
+              ["label", { for: "johnny" }, "Johnny Doe"],
+            ],
+          ],
+          ["br"],
+          ["input", { type: "checkbox", name: "remember", id: "remember", checked: "" }],
+          ["label", { for: "remember" }, "Remember me"],
+          ["input", { type: "submit", value: "Submit" }],
+          ["input", { type: "reset", value: "Reset" }],
+        ],
+      ],
+    ];
+
+    const Cat = (state) => [
+      ["h3", { id: "cat" }, "Cat"],
+      ["p", "Here is a cute kitten."],
+      ["img", { src: "https://placecats.com/300/200", alt: "Example kitten" }],
+      ["hr"]
+    ];
+
+    app({
+      node: document.getElementById("app"),
+      init: {
+        introTitle: "Microjs",
+        introShort: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, reprehenderit!",
+        introLong:
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem consequatur, natus laboriosam incidunt quam est aperiam dignissimos doloribus beatae id, aspernatur facilis? Molestiae eveniet nihil sint nam, animi commodi debitis!",
+        installationCode: "console.log('Hello World!');",
+        goals: ["Responsive", "Good code quality", "Good browser support", "Small size (&lt; 2kb)", "Beautiful", "No classes"],
+      },
+      view: (state) => [
+        Intro(state),
+        Installation(state),
+        Goals(state),
+        Cat(state),
+        Elements(state)
+      ],
+    });
+  </script>
+</body>
+
 </html>

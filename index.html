@@ -1,62 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
-    <link rel="stylesheet" type="text/css" href="./css/globalreset.css" />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <link rel="stylesheet" type="text/css" href="./css/linkedin.css" />
-    <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/github.js"></script>
-    <link rel="icon" href="./img/logo.png" />
-    <title>Victor Winberg Portfolio</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <header>
-        <input type="checkbox" id="drawer-toggle" />
-        <label for="drawer-toggle">
-          <span class="menu"></span>
-        </label>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <script type="text/javascript" src="../js/tailwind.js"></script>
+  <link rel="icon" href="../img/logo.png" />
+  <title>Victor Winberg Portfolio</title>
+</head>
 
-        <nav>
-          <ul>
-            <li>
-              <a href="./" class="active">
-                <img src="./img/common/logo.svg" alt="My github logotype of the letter V" />
-              </a>
-            </li>
-            <li><a href="./resume">Résumé</a></li>
-            <li><a href="./gallery">Gallery</a></li>
-            <li><a href="./projects">Projects</a></li>
-            <li><a href="./about">About</a></li>
-          </ul>
-        </nav>
-      </header>
+<body>
+  <div class="container">
+    <header>
+      <input type="checkbox" id="drawer-toggle" />
+      <label for="drawer-toggle">
+        <span class="menu"></span>
+      </label>
 
-      <main class="centered">
-        <div>
-          <a href="./debug.css"><img class="circle" src="./img/about/profile.jpg" alt="My profile picture" height="200" width="200" /></a>
-        </div>
-        <h1>Victor Winberg</h1>
-        <p>Dedicated | Determined | Developer</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="../me" class="logo">
+              <img src="../img/common/logo.svg" alt="My github logotype of the letter V" />
+            </a>
+          </li>
+          <li class="grow"></li>
+          <li>
+            <a href="mailto:victor.m.winberg@gmail.com">
+              <img src="../img/icons/envelope.svg" alt="An envelope" class="w-auto h-6 invert" /></a>
+          </li>
+          <li>
+            <a href="//github.com/victorwinberg">
+              <img src="../img/icons/github.svg" alt="Github logotype" class="w-auto h-6 invert" /></a>
+          </li>
+          <li>
+            <a href="//www.linkedin.com/in/victorwinberg">
+              <img src="../img/icons/linkedin.svg" alt="Linkedin logotype" class="w-auto h-6 invert" /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <div id="github"></div>
+    <main>
+      <div class="relative min-h-dvh min-w-[320px] bg-white text-gray-800 p-4 lg:p-8">
+        <button onclick="window.print()"
+          class="absolute top-4 right-4 print:hidden px-4 py-2 text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          Print
+        </button>
 
-        <div class="position-bottom">
-          <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="victorwinberg">
-            <a class="LI-simple-link" href="//se.linkedin.com/in/victorwinberg?trk=profile-badge"></a>
+        <!-- Info -->
+        <div class="container mx-auto max-w-[1024px]">
+          <div class="grid grid-cols-1 md:mt-12 md:grid-cols-6">
+            <!-- Personal -->
+            <div class="p-5 text-left md:col-span-2 md:text-right">
+              <img class="inline-block md:w-2/3" src="./img/about/me.jpeg" alt="My portrait">
+              <div class="mt-5 space-y-2">
+                <p>Malmö, Sweden</p>
+                <p>
+                  <a class="font-medium text-black underline hover:text-black/75"
+                    href="//victorwinberg.github.io">victorwinberg.github.io</a>
+                </p>
+              </div>
+            </div>
+            <!-- END Personal -->
+
+            <!-- Intro -->
+            <div class="p-5 md:col-span-4">
+              <h1 class="text-xl font-semibold">Full-Stack Developer</h1>
+              <h2 class="text-5xl leading-tight font-bold">Victor Winberg</h2>
+              <div class="my-5 h-1 rounded-sm bg-indigo-500"></div>
+              <p class="text-lg leading-relaxed text-slate-600">
+                Dedicated and focused developer with a passion for programming, problem-solving, and challenges! My
+                greatest
+                strengths are my willingness to learn new things and my social capacity. In teams, I am cheerful,
+                initiative
+                and cooperative, with great commitment and hunger for new challenges.
+              </p>
+            </div>
+            <!-- END Intro -->
           </div>
         </div>
-      </main>
+        <!-- END Info -->
 
-      <footer>
-        <span>© Copyright <span id="year">2020</span> | Victor Winberg</span>
-      </footer>
-    </div>
+        <!-- Bio -->
+        <div class="container mx-auto max-w-[1024px] space-y-10">
+          <!-- Skills -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Skills</h3>
+            </div>
+            <div class="px-5 py-2 md:col-span-4 grid grid-cols-2 md:grid-cols-3 gap-3">
+              <!-- Card for Programming -->
+              <div class="p-4 rounded-lg shadow-md">
+                <h5 class="text-indigo-700 font-bold">Programming</h5>
+                <p class="text-sm">TypeScript, Python, Golang, JavaScript</p>
+              </div>
 
-    <script type="text/javascript" src="./js/linkedin.js" async defer></script>
-  </body>
+              <!-- Card for Frameworks -->
+              <div class="p-4 rounded-lg shadow-md">
+                <h5 class="text-indigo-700 font-bold">Frameworks</h5>
+                <p class="text-sm">Node, React, Vue, Hyperapp, Preact, REST</p>
+              </div>
+
+              <!-- Card for Tools -->
+              <div class="p-4 rounded-lg shadow-md">
+                <h5 class="text-indigo-700 font-bold">Tools</h5>
+                <p class="text-sm">GitHub, Docker, GIT, Github Actions, JIRA</p>
+              </div>
+
+              <!-- Card for Cloud -->
+              <div class="p-4 rounded-lg shadow-md">
+                <h5 class="text-indigo-700 font-bold">Cloud</h5>
+                <p class="text-sm">AWS, Google Cloud</p>
+              </div>
+
+              <!-- Card for Databases -->
+              <div class="p-4 rounded-lg shadow-md">
+                <h5 class="text-indigo-700 font-bold">Databases</h5>
+                <p class="text-sm">GraphQL, MongoDB, MySQL, PostgreSQL</p>
+              </div>
+            </div>
+          </div>
+          <!-- END Skills -->
+
+          <!-- Education -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Education</h3>
+            </div>
+            <div class="space-y-6 px-5 py-2 md:col-span-4">
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  2014 - 2019
+                </h4>
+                <h5 class="mb-1 font-bold">
+                  Master of Engineering in Computer Science, Lund University
+                </h5>
+                <p class="leading-relaxed">
+                  I obtained my Master's degree in Computer Science, which provided me with a solid foundation in
+                  programming,
+                  algorithms, and various technologies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- END Education -->
+
+          <!-- Work Experience -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Work Experience</h3>
+            </div>
+            <div class="space-y-6 px-5 py-2 md:col-span-4">
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  Sep 2023 - Ongoing
+                </h4>
+                <h5 class="mb-1 font-bold">Full Stack Developer at Tedsys, Malmö</h5>
+                <p class="leading-relaxed">
+                  As a Full Stack Developer, I have been responsible for developing and maintaining a wide range of
+                  systems and infrastructures. My broad technical expertise has allowed me to play a flexible and
+                  pivotal role in driving various projects to completion and providing key support where needed.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  May 2022 - Sep 2023
+                </h4>
+                <h5 class="mb-1 font-bold">Full Stack Developer at Doktor.se, Malmö</h5>
+                <p class="leading-relaxed">
+                  As a Full Stack Developer and Tech Lead, I implemented a robust server-side infrastructure using
+                  Node.js and Postgres for an advanced graph editor. Our collaborative efforts empowered users to
+                  create, edit, and publish complex interconnected graphs with personalized assistance.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  Oct 2020 - May 2022
+                </h4>
+                <h5 class="mb-1 font-bold">Full Stack Developer / Project Manager at Jayway, Malmö</h5>
+                <p class="leading-relaxed">
+                  Developed full-stack applications using Node and Preact, creating RESTful APIs and dynamic frontends.
+                  Managed daily stand-ups, retrospectives, and planning sessions while improving performance in search
+                  and A/B test monitoring applications.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  Sep 2019 - Oct 2020
+                </h4>
+                <h5 class="mb-1 font-bold">Consultant, Copenhagen</h5>
+                <p class="leading-relaxed">
+                  As a Software Developer, I undertook the development of both a full-stack Java application and a
+                  system utilizing Umbraco and Vue, showcasing my versatility in working with different technologies and
+                  frameworks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- END Work Experience -->
+
+          <!-- Volunteering -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Volunteering</h3>
+            </div>
+            <div class="space-y-6 px-5 py-2 md:col-span-4">
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">2022</h4>
+                <h5 class="mb-1 font-bold">Member of Program Committee at Øredev</h5>
+                <p class="leading-relaxed">
+                  Member of the program committee, responsible for the web track. Invited speakers, designed the
+                  program, and created experiences for one of Europe's largest developer conferences.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">2018</h4>
+                <h5 class="mb-1 font-bold">Scrum Master at ARKAD</h5>
+                <p class="leading-relaxed">
+                  Developed a full-stack in-house project management system with Elixir, React, and PostgreSQL for
+                  ARKAD, the largest career fair in southern Sweden.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">2014 - 2017</h4>
+                <h5 class="mb-1 font-bold">Contact and Cooperation with Companies at D-sektionen</h5>
+                <p class="leading-relaxed">
+                  Worked on employer branding, communication with companies, and event organization. Managed
+                  relationships and created connections within the tech industry.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">2016</h4>
+                <h5 class="mb-1 font-bold">Business and Webmaster at Teknikfokus</h5>
+                <p class="leading-relaxed">
+                  Worked on the Teknikfokus job fair, designing and maintaining the website, managing company relations,
+                  and enhancing web functionality for the event.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- END Volunteering -->
+
+          <!-- Projects -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Projects</h3>
+            </div>
+            <div class="space-y-6 px-5 py-2 md:col-span-4">
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  Home Assistant
+                </h4>
+                <h5 class="mb-1 font-bold">
+                  Custom smart home setup -
+                  <a class="font-medium text-black underline hover:text-black/75"
+                    href="https://github.com/VictorWinberg/raspberry-pi-setup/tree/main/homeassistant">GitHub</a>
+                </h5>
+                <p class="leading-relaxed">
+                  A personalized Home Assistant configuration to automate devices and enhance home efficiency.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  QRHunt
+                </h4>
+                <h5 class="mb-1 font-bold">
+                  App to hunt QR codes -
+                  <a class="font-medium text-black underline hover:text-black/75"
+                    href="https://www.github.com/VictorWinberg/qr-hunt">GitHub</a>
+                </h5>
+                <p class="leading-relaxed">
+                  An app to hunt QR codes, collect points, and compete with friends.
+                </p>
+              </div>
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                  OneList
+                </h4>
+                <h5 class="mb-1 font-bold">
+                  Shopping List app -
+                  <a class="font-medium text-black underline hover:text-black/75"
+                    href="https://www.github.com/VictorWinberg/OneList">GitHub</a>
+                </h5>
+                <p class="leading-relaxed">
+                  A collaborative shopping list app with categorization functionality.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- END Projects -->
+
+          <!-- Social -->
+          <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+              <h3 class="text-lg font-bold uppercase">Social</h3>
+            </div>
+            <div class="space-y-6 px-5 py-2 md:col-span-4">
+              <div>
+                <h4 class="mb-2 text-lg font-semibold text-blue-600">LinkedIn</h4>
+                <h5 class="mb-1 font-bold">
+                  Work Profile -
+                  <a class="font-medium text-black underline hover:text-black/75"
+                    href="https://linkedin.com/in/victorwinberg">https://linkedin.com/in/victorwinberg</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <!-- END Social -->
+
+        </div>
+        <!-- END Bio -->
+      </div>
+    </main>
+
+    <footer>
+      <span>© Copyright
+        <script>
+          document.write(new Date().getFullYear());
+        </script> | Victor Winberg
+      </span>
+    </footer>
+  </div>
+</body>
+
 </html>

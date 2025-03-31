@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script type="text/javascript" src="../js/tailwind.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/linkedin.css" />
+    <script type="text/javascript" src="./js/github.js"></script>
+    <link rel="icon" href="./img/logo.png" />
+    <title>Victor Winberg Portfolio</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <input type="checkbox" id="drawer-toggle" />
+            <label for="drawer-toggle">
+                <span class="menu"></span>
+            </label>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../me" class="logo active">
+                            <img src="../img/common/logo.svg" alt="My github logotype of the letter V" />
+                        </a>
+                    </li>
+                    <li class="grow"></li>
+                    <li>
+                        <a href="mailto:victor.m.winberg@gmail.com">
+                            <img src="../img/icons/envelope.svg" alt="An envelope" class="w-auto h-6 invert" /></a>
+                    </li>
+                    <li>
+                        <a href="//github.com/victorwinberg">
+                            <img src="../img/icons/github.svg" alt="Github logotype" class="w-auto h-6 invert" /></a>
+                    </li>
+                    <li>
+                        <a href="//www.linkedin.com/in/victorwinberg">
+                            <img src="../img/icons/linkedin.svg" alt="Linkedin logotype"
+                                class="w-auto h-6 invert" /></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="centered space-y-8">
+            <div>
+                <a href="./debug.css"><img class="circle" src="./img/about/profile.jpg" alt="My profile picture"
+                        height="200" width="200" /></a>
+            </div>
+            <div class="text-center">
+                <!-- Name with a stylish font -->
+                <h1 class="text-4xl font-extrabold text-gray-900 md:text-5xl">
+                    Victor Winberg
+                </h1>
+
+                <div class="my-5 h-1 m-auto rounded-sm bg-indigo-500 max-w-[600px]"></div>
+
+                <div class="mt-8">
+                    <a class=" px-6 py-4 text-lg font-medium text-white bg-indigo-600 rounded-md shadow-md" href="../">
+                        Resume
+                    </a>
+                </div>
+            </div>
+
+            <div id="github"></div>
+
+            <div class="text-lg leading-relaxed text-slate-600">
+                <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US"
+                    data-type="horizontal" data-theme="light" data-vanity="victorwinberg">
+                    <a class="LI-simple-link" href="//se.linkedin.com/in/victorwinberg?trk=profile-badge"></a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <span>© Copyright
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> | Victor Winberg
+            </span>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="./js/linkedin.js" async defer></script>
+</body>
+
+</html>

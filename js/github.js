@@ -22,16 +22,8 @@ fetch("//api.github.com/users/VictorWinberg").then(async (res) => {
   gists.setAttribute("href", "//gist.github.com/VictorWinberg");
 
   const css = `
-    #github {
-      position: relative;
-    }
-
     .github {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       margin: 1em;
       animation: fade .5s ease-in-out;
     }

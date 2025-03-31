@@ -1,43 +1,11 @@
 /* body font and background properties */
 body {
   /* typography Google's Roboto with sans-serif as fallback */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: rgba(0,0,0,0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #333;
   min-height: 100vh;
-}
-
-/* headings font sizes */
-h1 {
-  font-size: 2em;
-  margin: 0.5em 0;
-}
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1em; }
-
-/* extra styling for h1 headers */
-h1::first-letter {color: red; }
-
-/* paragraph more distinct */
-p  {
-  text-align: justify;
-  font-size: 0.90em;
-  line-height: 1.5em;
-  font-weight: bolder;
-  margin: 0.5em 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: inherit;
 }
 
 header {
@@ -46,7 +14,7 @@ header {
 }
 
 main {
-  min-height: 50vh;
+  min-height: 66vh;
   padding: 2em;
   background-color: #eee;
 }
@@ -55,13 +23,8 @@ footer {
   flex-grow: 1;
   position: relative;
   color: #eee;
-  padding: 2.5em 2em;
+  padding: 2em;
   background-color: #333;
-}
-
-footer > span {
-  position: absolute;
-  bottom: 2em;
 }
 
 /* mobile navigation */
@@ -85,7 +48,7 @@ nav ul {
 nav li a {
   display: block;
   color: #eee;
-  padding: 2em;
+  padding: 1em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -101,14 +64,19 @@ nav li a:hover:not(.active) {
 }
 
 /* navigation menu image items */
-nav li a img {
-  margin: -1.5em 0;
+.logo {
   width: auto;
-  height: 3.8em;
+  height: 56px;
+  padding: 0.5rem;
+}
+.logo img {
+  max-height: 100%;
 }
 
 /* mobile navigation drawer */
-header .menu, header .menu::before, header .menu::after {
+header .menu,
+header .menu::before,
+header .menu::after {
   display: block;
   width: 35px;
   height: 5px;
@@ -120,16 +88,21 @@ header .menu {
   position: relative;
 }
 
-header .menu::before, header .menu::after {
-  content: '';
+header .menu::before,
+header .menu::after {
+  content: "";
   position: absolute;
   left: 0;
 }
 
-header .menu::before { top: -11px; }
-header .menu::after  { top: 11px;  }
+header .menu::before {
+  top: -11px;
+}
+header .menu::after {
+  top: 11px;
+}
 
-label[for=drawer-toggle] {
+label[for="drawer-toggle"] {
   display: block;
   cursor: pointer;
   width: 41px;
@@ -146,20 +119,23 @@ label[for=drawer-toggle] {
   opacity: 1;
 }
 
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::before {
+#drawer-toggle:checked ~ label[for="drawer-toggle"] .menu::before {
   transform: rotate(270deg) translate(-11px, 0px);
 }
 
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu {
+#drawer-toggle:checked ~ label[for="drawer-toggle"] .menu {
   transform: rotate(45deg);
 }
 
-#drawer-toggle:checked ~ label[for=drawer-toggle] .menu::after {
+#drawer-toggle:checked ~ label[for="drawer-toggle"] .menu::after {
   transform: rotate(-270deg) translate(-11px, 0px);
 }
 
 /* résumé table */
-table, tbody, tr, td {
+table,
+tbody,
+tr,
+td {
   display: block;
 }
 
@@ -235,13 +211,6 @@ form button:focus {
   background-color: green;
 }
 
-.position-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 /* centering */
 .centered {
   position: relative;
@@ -251,6 +220,10 @@ form button:focus {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+}
+
+.centered img {
+  margin: auto;
 }
 
 .centered p {
@@ -269,9 +242,15 @@ form button:focus {
 }
 
 @keyframes filter-animation {
-  0%   { filter: hue-rotate(100deg) contrast(1.5); }
-  50%  { filter: hue-rotate(200deg) contrast(1.5); }
-  100% { filter: hue-rotate(100deg) contrast(1.5); }
+  0% {
+    filter: hue-rotate(100deg) contrast(1.5);
+  }
+  50% {
+    filter: hue-rotate(200deg) contrast(1.5);
+  }
+  100% {
+    filter: hue-rotate(100deg) contrast(1.5);
+  }
 }
 
 /* clear floating elements on both sides */
@@ -308,7 +287,7 @@ form button:focus {
 }
 
 .portfolio .item::before {
-  content: '';
+  content: "";
   padding-top: 100%;
 }
 
@@ -322,85 +301,51 @@ form button:focus {
   grid-column: span 1;
 }
 
-.portfolio .item.one      { background-image: url(../img/gallery/stab.jpg); }
-.portfolio .item.two      { background-image: url(../img/gallery/program.jpg); }
-.portfolio .item.three    { background-image: url(../img/gallery/lost_city_pompeii.jpg); }
-.portfolio .item.four     { background-image: url(../img/gallery/colosseum_rome.jpg); }
-.portfolio .item.five     { background-image: url(../img/gallery/marseille_france.jpg); }
-.portfolio .item.six      { background-image: url(../img/gallery/nollning.jpg); }
-.portfolio .item.seven    { background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg); }
-.portfolio .item.eight    { background-image: url(../img/gallery/genoa_italy.jpg); }
-.portfolio .item.nine     { background-image: url(../img/gallery/villach_austria.jpg); }
-.portfolio .item.ten      { background-image: url(../img/gallery/trdelnik_prague.jpg); }
-.portfolio .item.eleven   { background-image: url(../img/gallery/barcelona_spain.jpg); }
-.portfolio .item.twelve   { background-image: url(../img/gallery/leaning_tower_pisa.jpg); }
-.portfolio .item.thirteen { background-image: url(../img/gallery/blue_lagoon_ayia_napa.jpg); }
-.portfolio .item.fourteen { background-image: url(../img/gallery/la_folie_douce_val_thorens.jpg); }
-.portfolio .item.fifteen  { background-image: url(../img/gallery/zion_national_park.jpg); }
-
-/* skillbar list */
-ul.skill {
-  position: relative;
-  z-index: 1;
+.portfolio .item.one {
+  background-image: url(../img/gallery/stab.jpg);
 }
-
-/* skillbar list item */
-ul.skill li {
-  display: block;
-  margin: auto;
+.portfolio .item.two {
+  background-image: url(../img/gallery/program.jpg);
 }
-
-/* skillbar title */
-ul.skill li span:nth-child(1) {
-  display: inline-block;
+.portfolio .item.three {
+  background-image: url(../img/gallery/lost_city_pompeii.jpg);
 }
-
-/* skillbar percentage */
-ul.skill li span:nth-child(2) {
-  display: block;
-  float: right;
+.portfolio .item.four {
+  background-image: url(../img/gallery/colosseum_rome.jpg);
 }
-
-/* skillbar bar */
-ul.skill li span:nth-child(3) {
-  display: block;
-  height: 3px;
-  width: 0;
-  margin-bottom: 0.5em;
-  background-color: #333;
+.portfolio .item.five {
+  background-image: url(../img/gallery/marseille_france.jpg);
 }
-
-/* skillbar bar background */
-ul.skill li span:nth-child(3)::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background-color: #fff;
-  /* to be below the parent element */
-  z-index: -1;
+.portfolio .item.six {
+  background-image: url(../img/gallery/nollning.jpg);
 }
-
-/* widths */
-ul.skill li span.w100{ width: 100%; }
-ul.skill li span.w95 { width: 95%;  }
-ul.skill li span.w90 { width: 90%;  }
-ul.skill li span.w85 { width: 85%;  }
-ul.skill li span.w80 { width: 80%;  }
-ul.skill li span.w75 { width: 75%;  }
-ul.skill li span.w70 { width: 70%;  }
-ul.skill li span.w65 { width: 65%;  }
-ul.skill li span.w60 { width: 60%;  }
-ul.skill li span.w55 { width: 55%;  }
-ul.skill li span.w50 { width: 50%;  }
-ul.skill li span.w45 { width: 45%;  }
-ul.skill li span.w40 { width: 40%;  }
-ul.skill li span.w35 { width: 35%;  }
-ul.skill li span.w30 { width: 30%;  }
-ul.skill li span.w25 { width: 25%;  }
-ul.skill li span.w20 { width: 20%;  }
-ul.skill li span.w15 { width: 15%;  }
-ul.skill li span.w10 { width: 10%;  }
+.portfolio .item.seven {
+  background-image: url(../img/gallery/riomaggiore_cinque_terre.jpg);
+}
+.portfolio .item.eight {
+  background-image: url(../img/gallery/genoa_italy.jpg);
+}
+.portfolio .item.nine {
+  background-image: url(../img/gallery/villach_austria.jpg);
+}
+.portfolio .item.ten {
+  background-image: url(../img/gallery/trdelnik_prague.jpg);
+}
+.portfolio .item.eleven {
+  background-image: url(../img/gallery/barcelona_spain.jpg);
+}
+.portfolio .item.twelve {
+  background-image: url(../img/gallery/leaning_tower_pisa.jpg);
+}
+.portfolio .item.thirteen {
+  background-image: url(../img/gallery/blue_lagoon_ayia_napa.jpg);
+}
+.portfolio .item.fourteen {
+  background-image: url(../img/gallery/la_folie_douce_val_thorens.jpg);
+}
+.portfolio .item.fifteen {
+  background-image: url(../img/gallery/zion_national_park.jpg);
+}
 
 /* social and resume inline links */
 ul.boxes li {
@@ -442,15 +387,7 @@ ul.boxes li a img {
   nav ul {
     display: flex;
     height: auto;
-    justify-content: center;
   }
-
-  /* desktop navigation menu item order */
-  nav ul li:nth-child(1) {  order: 3; }
-  nav ul li:nth-child(2) {  order: 1; }
-  nav ul li:nth-child(3) {  order: 2; }
-  nav ul li:nth-child(4) {  order: 4; }
-  nav ul li:nth-child(5) {  order: 5; }
 
   /* resume table row */
   tbody.col-2 tr {
@@ -489,7 +426,63 @@ ul.boxes li a img {
   }
 
   /* hide drawer toggle */
-  label[for=drawer-toggle] {
+  label[for="drawer-toggle"] {
     display: none;
+  }
+}
+
+@media print {
+  html {
+    font-size: 10pt;
+    color: black;
+    background: white;
+  }
+
+  /* Force grid to use desktop layout */
+  .md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+  .md\:col-span-1 {
+    grid-column: span 1 !important;
+  }
+  .md\:col-span-2 {
+    grid-column: span 2 !important;
+  }
+  .md\:col-span-3 {
+    grid-column: span 3 !important;
+  }
+  .md\:col-span-4 {
+    grid-column: span 4 !important;
+  }
+  .md\:text-right {
+    text-align: right !important;
+  }
+
+  main,
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Hide unnecessary UI elements for printing */
+  header,
+  footer {
+    display: none !important;
   }
 }

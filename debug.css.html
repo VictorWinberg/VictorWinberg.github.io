@@ -1,125 +1,149 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  style="
-    width: 100%;
-    height: 100%;
+<html lang="en" style="
     background: #1f4037;
     background: linear-gradient(to right, #1f4037, #99f2c8);
-  "
->
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//fonts.googleapis.com/css?family=Roboto:300,400,700"
-    />
-    <link rel="stylesheet" type="text/css" href="./css/globalreset.css" />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <script type="text/javascript" src="./js/script.js"></script>
-    <link rel="icon" href="./img/logo.png" />
-    <title>Victor Winberg Portfolio</title>
-  </head>
+  ">
 
-  <body style="display: none">
-    <div class="container">
-      <header>
-        <input type="checkbox" id="drawer-toggle" />
-        <label for="drawer-toggle">
-          <span class="menu"></span>
-        </label>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,700" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <script type="text/javascript" src="../js/tailwind.js"></script>
+  <link rel="icon" href="./img/logo.png" />
+  <title>Victor Winberg Portfolio</title>
+</head>
 
-        <nav>
-          <ul>
-            <li>
-              <a href="./" class="active"
-                ><img
-                  src="./img/common/logo.svg"
-                  alt="My github logotype of the letter V"
-              /></a>
-            </li>
-            <li><a href="./resume">Résumé</a></li>
-            <li><a href="./gallery">Gallery</a></li>
-            <li><a href="./projects">Projects</a></li>
-            <li><a href="./about">About</a></li>
-          </ul>
-        </nav>
-      </header>
+<body style="
+  display: none;
+  background: #1f4037;
+  background: linear-gradient(to right, #1f4037, #99f2c8);
+">
+  <div class="container">
+    <header>
+      <input type="checkbox" id="drawer-toggle" />
+      <label for="drawer-toggle">
+        <span class="menu"></span>
+      </label>
 
-      <main class="centered">
+      <nav>
+        <ul>
+          <li>
+            <a href="../me" class="logo">
+              <img src="../img/common/logo.svg" alt="My github logotype of the letter V" />
+            </a>
+          </li>
+          <li class="grow"></li>
+          <li>
+            <a href="mailto:victor.m.winberg@gmail.com">
+              <img src="../img/icons/envelope.svg" alt="An envelope" class="w-auto h-6 invert" /></a>
+          </li>
+          <li>
+            <a href="//github.com/victorwinberg">
+              <img src="../img/icons/github.svg" alt="Github logotype" class="w-auto h-6 invert" /></a>
+          </li>
+          <li>
+            <a href="//www.linkedin.com/in/victorwinberg">
+              <img src="../img/icons/linkedin.svg" alt="Linkedin logotype" class="w-auto h-6 invert" /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="centered" style="
+      background: #1f4037;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+    ">
+      <div>
+        <a href="./me">
+          <img class="circle img-debug" src="./img/about/profile.jpg" alt="My profile picture" height="200"
+            width="200" />
+        </a>
+      </div>
+      <h1 class="text-4xl font-extrabold text-gray-900 md:text-5xl">
+        Debug.css
+      </h1>
+
+      <div class="my-5 h-1 m-auto rounded-sm bg-indigo-500 w-[100%] max-w-[600px]"></div>
+
+      <div class="mt-8 space-y-3">
         <div>
-          <a href="./"
-            ><img
-              class="circle img-debug"
-              src="./img/about/profile.jpg"
-              alt="My profile picture"
-              height="200"
-              width="200"
-          /></a>
-        </div>
-        <h1>Debug.css</h1>
-
-        <b>
-          <a
-            href='javascript:/* original gist.github.com/addyosmani/fd3999ea7fce242756b1 */!function(a){for(a.__CSSDebug__=!a.__CSSDebug__,i=0;A=document.all[i++];)A.style.outline=a.__CSSDebug__?"solid hsl("+18*-(A+A).length+",99%,50%)1px":null}(window);'
-          >
+          <a class="px-6 py-4 text-lg font-medium text-white bg-indigo-600 rounded-md shadow-md"
+            href='javascript:/* original gist.github.com/addyosmani/fd3999ea7fce242756b1 */!function(a){for(a.__CSSDebug__=!a.__CSSDebug__,i=0;A=document.all[i++];)A.style.outline=a.__CSSDebug__?"solid hsl("+18*-(A+A).length+",99%,50%)1px":null}(window);'>
             Debug CSS Colorful
           </a>
-        </b>
+        </div>
         <br />
 
-        <b>
-          <a
-            href='javascript:/* debug.css | MIT License | zaydek.github.com/debug.css */ if (!("is_debugging" in window)) { is_debugging = false; var debug_el = document.createElement("style"); debug_el.append(document.createTextNode(`*:not(path):not(g) { color: hsla(210, 100%, 100%, 0.9) !important; background: hsla(210, 100%,  50%, 0.5) !important; outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important; box-shadow: none !important; filter: none !important; }`)); } function enable_debugger() { if (!is_debugging) { document.head.appendChild(debug_el); is_debugging = true; } } function disable_debugger() { if (is_debugging) { document.head.removeChild(debug_el); is_debugging = false; } } !is_debugging ? enable_debugger() : disable_debugger();'
-          >
+        <div>
+          <a class="px-6 py-4 text-lg font-medium text-white bg-indigo-600 rounded-md shadow-md"
+            href='javascript:/* debug.css | MIT License | zaydek.github.com/debug.css */ if (!("is_debugging" in window)) { is_debugging = false; var debug_el = document.createElement("style"); debug_el.append(document.createTextNode(`*:not(path):not(g) { color: hsla(210, 100%, 100%, 0.9) !important; background: hsla(210, 100%,  50%, 0.5) !important; outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important; box-shadow: none !important; filter: none !important; }`)); } function enable_debugger() { if (!is_debugging) { document.head.appendChild(debug_el); is_debugging = true; } } function disable_debugger() { if (is_debugging) { document.head.removeChild(debug_el); is_debugging = false; } } !is_debugging ? enable_debugger() : disable_debugger();'>
             Debug CSS X-ray
           </a>
-        </b>
+        </div>
         <br />
 
-        <b>
-          <a
-            href='javascript:var _cedit=document.body.contentEditable==="true"; document.body.spellcheck=false; document.body.contentEditable=(_cedit ? %27inherit%27 : %27true%27); document.body.style.border = _cedit ? %27%27:%273px solid red%27; document.designMode=_cedit?%27off%27:%27on%27; void 0'
-          >
+        <div>
+          <a class="px-6 py-4 text-lg font-medium text-white bg-indigo-600 rounded-md shadow-md"
+            href='javascript:var _cedit=document.body.contentEditable==="true"; document.body.spellcheck=false; document.body.contentEditable=(_cedit ? %27inherit%27 : %27true%27); document.body.style.border = _cedit ? %27%27:%273px solid red%27; document.designMode=_cedit?%27off%27:%27on%27; void 0'>
             Edit HTML
           </a>
-        </b>
+        </div>
         <br />
 
-        <b>
-          <a
-            href='javascript:/* copy url link to clipboard */ !(function () { function copyToClipboard(text) { navigator.clipboard.writeText(text).then( function () { console.log("Copied", text); }, function (err) { alert("Could not copy text: ", err); } ); } switch (true) { case !!location.href.match(/^https:\/\/github.com\/.*\/pull\//): { var title = document.querySelector(".js-issue-title").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } case !!location.href.match(/^https:\/\/favro.com\/.*card=/): { var id = document.querySelector(".js-cardid").innerText.replace(/^DOK-/, "Dok-"); var title = document.querySelector(".js-card-details-title").value; return copyToClipboard(`[${id}: ${title}](${location.href})`); } case !!location.href.match( /^https:\/\/bitbucket.org\/.*\/pull-requests\// ): { var title = document.querySelector("[data-testid=\"pr-header\"] h1").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } default: { return copyToClipboard(`[${document.title}](${location.href})`); } } })(window);'
-          >
+        <div>
+          <a class="px-6 py-4 text-lg font-medium text-white bg-indigo-600 rounded-md shadow-md"
+            href='javascript:/* copy url link to clipboard */ !(function () { function copyToClipboard(text) { navigator.clipboard.writeText(text).then( function () { console.log("Copied", text); }, function (err) { alert("Could not copy text: ", err); } ); } switch (true) { case !!location.href.match(/^https:\/\/github.com\/.*\/pull\//): { var title = document.querySelector(".js-issue-title").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } case !!location.href.match(/^https:\/\/favro.com\/.*card=/): { var id = document.querySelector(".js-cardid").innerText.replace(/^DOK-/, "Dok-"); var title = document.querySelector(".js-card-details-title").value; return copyToClipboard(`[${id}: ${title}](${location.href})`); } case !!location.href.match( /^https:\/\/bitbucket.org\/.*\/pull-requests\// ): { var title = document.querySelector("[data-testid=\"pr-header\"] h1").innerText.trim(); var id = location.pathname.split("/")?.[4]; var repo = location.pathname.split("/")?.[2]; return copyToClipboard(`PR ${repo}#${id} - [${title}](${location.href})`); } default: { return copyToClipboard(`[${document.title}](${location.href})`); } } })(window);'>
             Copy URL (markdown)
           </a>
-        </b>
-        <br />
+        </div>
+      </div>
+      <br />
 
-        <br />
+      <br />
 
-        <i>Click on the link to test it</i><br />
-        <i>Drag it to bookmarks to save it</i><br />
-      </main>
+      <i>Click on the link to test it</i><br />
+      <i>Drag it to bookmarks to save it</i><br />
+    </main>
 
-      <footer>
-        <span>© Copyright <span id="year">2020</span> | Victor Winberg</span>
-      </footer>
-    </div>
+    <footer>
+      <span>© Copyright
+        <script>
+          document.write(new Date().getFullYear());
+        </script> | Victor Winberg
+      </span>
+    </footer>
+  </div>
 
-    <script lang="javascript">
-      window.setTimeout(function () {
-        document.body.style.display = 'block';
-      }, 100)
+  <script lang="javascript">
+    window.setTimeout(function () {
+      document.body.style.display = 'block';
+    }, 100)
 
-      window.setTimeout(function () {
-        document.body.style.display = 'none';
-      }, 150)
+    window.setTimeout(function () {
+      document.body.style.display = 'none';
+    }, 150)
 
-      window.setTimeout(function () {
-        document.body.style.display = 'block';
-      }, 200)
-    </script>
-  </body>
+    window.setTimeout(function () {
+      document.body.style.display = 'block';
+    }, 200)
+
+    window.setTimeout(function () {
+      document.body.style.display = 'none';
+    }, 250)
+
+    window.setTimeout(function () {
+      document.body.style.display = 'block';
+    }, 300)
+
+    window.setTimeout(function () {
+      document.body.style.display = 'none';
+    }, 350)
+
+    window.setTimeout(function () {
+      document.body.style.display = 'block';
+    }, 400)
+  </script>
+</body>
+
 </html>
