@@ -1,0 +1,249 @@
+[
+  {
+    "name": "google-takeout",
+    "description": "Tool for organizing Google Photos takeout exports and fixing photo file dates.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/google-takeout",
+    "language": "JavaScript",
+    "category": "tools",
+    "hide": true
+  },
+  {
+    "name": "raspberry-pi-setup",
+    "description": "Scripts and configuration for my complete Raspberry Pi homelab setup.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/raspberry-pi-setup",
+    "language": "Shell",
+    "category": "tools"
+  },
+  {
+    "name": "qr-hunt",
+    "description": "Hunt QR codes, collect points, and compete with friends in this Vue web app.",
+    "url": "https://qr.codies.se",
+    "repo": "https://github.com/VictorWinberg/qr-hunt",
+    "language": "Vue",
+    "category": "web-apps"
+  },
+  {
+    "name": "OneList",
+    "description": "Shopping list and product shop for an ergonomics and aerosol technology project.",
+    "url": "https://shop.codies.se",
+    "repo": "https://github.com/VictorWinberg/OneList",
+    "language": "JavaScript",
+    "category": "web-apps"
+  },
+  {
+    "name": "VictorWinberg.github.io",
+    "description": "Personal portfolio website hosted on GitHub Pages.",
+    "url": "https://victorwinberg.github.io/",
+    "repo": "https://github.com/VictorWinberg/VictorWinberg.github.io",
+    "language": "HTML",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "OneWeek",
+    "description": "Family calendar web app built on Google Calendar with a week-focused view.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/OneWeek",
+    "language": "TypeScript",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "boardgames",
+    "description": "Browse your BoardGameGeek collection and pick a random game with optional filters.",
+    "url": "https://victorwinberg.github.io/boardgames/",
+    "repo": "https://github.com/VictorWinberg/boardgames",
+    "language": "TypeScript",
+    "category": "web-apps"
+  },
+  {
+    "name": "micro-framework",
+    "description": "Tiny vanilla JavaScript UI framework built in a step-by-step tutorial.",
+    "url": "https://victorwinberg.github.io/micro-framework/",
+    "repo": "https://github.com/VictorWinberg/micro-framework",
+    "language": "HTML",
+    "category": "experiments"
+  },
+  {
+    "name": "the-game",
+    "description": "Interactive 3D portfolio inspired by Bruno Simon's Folio 2019, built with Three.js.",
+    "url": "https://victorwinberg.github.io/the-game/",
+    "repo": "https://github.com/VictorWinberg/the-game",
+    "language": "JavaScript",
+    "category": "games",
+    "hide": true
+  },
+  {
+    "name": "robot",
+    "description": "Simulate robot movement in a room from commands in English, Swedish, or French.",
+    "url": "https://victorwinberg.github.io/robot/",
+    "repo": "https://github.com/VictorWinberg/robot",
+    "language": "JavaScript",
+    "category": "competitions"
+  },
+  {
+    "name": "frontend-website",
+    "description": "Responsive website built from scratch without Bootstrap, Material UI, or similar frameworks.",
+    "url": "https://victorwinberg.github.io/frontend-website/",
+    "repo": "https://github.com/VictorWinberg/frontend-website",
+    "language": "CSS",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "sebra",
+    "description": "CRM prototype tailored for the real estate industry, built with React and MUI.",
+    "url": "https://victorwinberg.github.io/sebra/",
+    "repo": "https://github.com/VictorWinberg/sebra",
+    "language": "TypeScript",
+    "category": "experiments"
+  },
+  {
+    "name": "yale-street",
+    "description": "Smart home dashboard for controlling lights and locks over MQTT.",
+    "url": "https://victorwinberg.github.io/yale-street/",
+    "repo": "https://github.com/VictorWinberg/yale-street",
+    "language": "TypeScript",
+    "category": "competitions",
+    "hide": true
+  },
+  {
+    "name": "webbuilder",
+    "description": "Full-stack Vue and Express app builder with auto-generated CRUD entity scaffolding.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/webbuilder",
+    "language": "Vue",
+    "category": "web-apps",
+    "hide": true
+  },
+  {
+    "name": "ereuntzdag.se",
+    "description": "Playful site that celebrates Wednesdays with music, video, and untz memes.",
+    "url": "https://victorwinberg.github.io/ereuntzdag.se/",
+    "repo": "https://github.com/VictorWinberg/ereuntzdag.se",
+    "language": "JavaScript",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "galaxy",
+    "description": "Fly through a 3D galaxy in the browser, backed by Ethereum smart contracts.",
+    "url": "https://victorwinberg.github.io/galaxy",
+    "repo": "https://github.com/VictorWinberg/galaxy",
+    "language": "TypeScript",
+    "category": "games"
+  },
+  {
+    "name": "fgg",
+    "description": "Website for Fina Grabbarnas Grupp with documents, forms, and event info.",
+    "url": "https://victorwinberg.github.io/fgg/",
+    "repo": "https://github.com/VictorWinberg/fgg",
+    "language": "JavaScript",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "web-scraper",
+    "description": "Dockerized Node.js web scraper with an Express API and PostgreSQL storage.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/web-scraper",
+    "language": "TypeScript",
+    "category": "tools"
+  },
+  {
+    "name": "ces",
+    "description": "Parcel shipping and track-and-trace app for the East India Trading case competition.",
+    "url": "https://victorwinberg.github.io/ces/",
+    "repo": "https://github.com/VictorWinberg/ces",
+    "language": "JavaScript",
+    "category": "competitions"
+  },
+  {
+    "name": "autocomplete",
+    "description": "Vue autocomplete component with dropdown suggestions, keyboard navigation, and unit tests.",
+    "url": "https://victorwinberg.github.io/autocomplete/",
+    "repo": "https://github.com/VictorWinberg/autocomplete",
+    "language": "Vue",
+    "category": "competitions"
+  },
+  {
+    "name": "datateknik",
+    "description": "Summaries and study material for courses in the LTH computer science program.",
+    "url": "https://victorwinberg.github.io/datateknik/",
+    "repo": "https://github.com/VictorWinberg/datateknik",
+    "language": "HTML",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "kasinogatan",
+    "description": "Mock Erik Olsson listing page for an apartment at Kasinogatan 5 in Malmö.",
+    "url": "https://victorwinberg.github.io/kasinogatan/",
+    "repo": "https://github.com/VictorWinberg/kasinogatan",
+    "language": "HTML",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "LHS",
+    "description": "Last Hen Standing — a humorous photo slideshow web experiment.",
+    "url": "https://victorwinberg.github.io/LHS/",
+    "repo": "https://github.com/VictorWinberg/LHS",
+    "language": "HTML",
+    "category": "experiments",
+    "hide": true
+  },
+  {
+    "name": "magasinet",
+    "description": "Tracks vacant AFB apartments and alerts when Magasinet listings appear.",
+    "url": "https://victorwinberg.github.io/magasinet/",
+    "repo": "https://github.com/VictorWinberg/magasinet",
+    "language": "JavaScript",
+    "category": "web-apps",
+    "hide": true
+  },
+  {
+    "name": "hashcode2018",
+    "description": "Google Hash Code 2018 solutions — top 25% online, top 12% in the extended round.",
+    "url": "",
+    "repo": "https://github.com/VictorWinberg/hashcode2018",
+    "language": "Python",
+    "category": "competitions"
+  },
+  {
+    "name": "myads",
+    "description": "Lund Innovation Challenge 2017 — location-based personal offers delivered on mobile.",
+    "url": "https://victorwinberg.github.io/myads",
+    "repo": "https://github.com/VictorWinberg/myads",
+    "language": "JavaScript",
+    "category": "competitions",
+    "hide": true
+  },
+  {
+    "name": "UnityGame",
+    "description": "Unity 3D game experiments exported to WebGL and playable in the browser.",
+    "url": "https://victorwinberg.github.io/UnityGame/",
+    "repo": "https://github.com/VictorWinberg/UnityGame",
+    "language": "C#",
+    "category": "games"
+  },
+  {
+    "name": "skolkompassen",
+    "description": "App for exploring and comparing schools.",
+    "url": "https://victorwinberg.github.io/skolkompassen/",
+    "repo": "https://github.com/VictorWinberg/skolkompassen",
+    "language": "TypeScript",
+    "category": "web-apps"
+  },
+  {
+    "name": "hello-baby",
+    "description": "Swedish baby guide with age-based recommendations from newborn through preschool.",
+    "url": "https://victorwinberg.github.io/hello-baby/",
+    "repo": "https://github.com/VictorWinberg/hello-baby",
+    "language": "TypeScript",
+    "category": "web-apps",
+    "hide": true
+  }
+]
